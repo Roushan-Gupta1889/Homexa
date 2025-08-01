@@ -1,80 +1,58 @@
-# 🏠 Homexa – Smart PG Finder 
+# 🏠 Homexa – Smart PG Finder
 
 **Smarter stays for students — powered by Homexa.**
 
-Homexa is a full-stack web platform designed to help students and young professionals find verified and affordable PG (Paying Guest) accommodations without the hassle of brokers. Built with modern technologies, Homexa simplifies the PG hunting process through location-based filtering, secure login, and clean UI.
+Homexa is a full-stack web platform designed to help students and young professionals find verified and affordable PG accommodations. Built using Flask and SQLite, it offers clean UI, secure authentication, and easy PG search/filtering.
 
 ---
-#PRD https://drive.google.com/file/d/1bQ36ljYjPDSN-Ndw9i9hnnyjwppt5WM7/view?usp=drive_link
 
 ## 🚀 Features
 
-- 🔍 Filter PGs by budget, location, food availability, and more  
-- ✅ Verified listings only (no fake entries)  
-- 🔐 JWT-based user authentication and protected routes  
-- 🛏️ Book or schedule PG visits easily  
-- 📱 Responsive and mobile-friendly UI  
+- 🔍 Filter PGs by budget, location, and amenities  
+- ✅ Verified listings only (no brokers)  
+- 🔐 JWT-based user authentication (Flask-JWT-Extended)  
+- 🛏️ Book or schedule PG visits  
+- 📱 Responsive and student-friendly UI  
 
 ---
 
 ## 🛠 Tech Stack
 
 **Frontend:**  
-- HTML, CSS, JavaScript  
+- HTML, CSS, JavaScript
 
 **Backend:**  
-- Node.js + Express.js  
+- Python (Flask)
 
 **Database:**  
-- MongoDB (with Mongoose)  
+- SQLite (via SQLAlchemy ORM)
 
 **Authentication:**  
-- JWT (JSON Web Token)  
+- JWT (Flask-JWT-Extended)
 
 **Hosting:**  
-- Vercel (Frontend), Render/Railway (Backend)  
-
-**Extras:**  
-- Google Maps API (for PG location mapping)  
+- Vercel (Frontend), Render/Railway (Flask backend)
 
 ---
 
 ## 📂 Project Structure
 
-
-
 ```
-├── client/                     # Frontend (HTML, CSS, JS)
+homexa/
+├── client/                  # Frontend files
 │   ├── index.html
 │   ├── styles/
-│   │   └── style.css
 │   ├── scripts/
-│   │   └── main.js
 │   └── assets/
-│       ├── images/
-│       └── icons/
-
-├── server/                     # Backend (Express + MongoDB)
-│   ├── app.js
-│   ├── .env
-│   ├── config/
-│   │   └── db.js
-│   ├── controllers/
-│   │   ├── authController.js
-│   │   └── pgController.js
-│   ├── models/
-│   │   ├── User.js
-│   │   └── PG.js
+├── server/                  # Flask backend
+│   ├── app.py
+│   ├── models.py
 │   ├── routes/
-│   │   ├── auth.js
-│   │   └── pg.js
-│   └── middleware/
-│       └── authMiddleware.js
-
-├── docs/
-│   └── README.md
-
-├── .gitignore
+│   ├── auth/
+│   ├── static/
+│   ├── templates/
+│   └── database.db          # SQLite file
+├── docs/                    # Documentation and PRD
 └── README.md
 ```
 
@@ -82,12 +60,12 @@ Homexa is a full-stack web platform designed to help students and young professi
 
 ## 👥 Team Members
 
-| Name               | Role                          |
-|-------------- -----|-------------------------------|
-| Mohit              | Project Manager & Backend Dev |
-| Arpit Mehla,Amit   | Frontend Developer            |
-| Roushan,Mohit      | Backend Developer             |
-| Amit Dole,Arpit    | Testing & Deployment          |
+| Name          | Role                          |
+|---------------|-------------------------------|
+| Mohit         | Project Manager & Backend Dev |
+| Arpit Mehla   | Frontend Developer            |
+| Roushan       | Backend Developer             |
+| Amit Dole     | Testing & Deployment          |
 
 ---
 
@@ -96,7 +74,7 @@ Homexa is a full-stack web platform designed to help students and young professi
 | Week | Focus                                     |
 |------|-------------------------------------------|
 | 1    | Planning, PRD, wireframes, repo setup     |
-| 2    | Frontend layout, backend models, JWT auth |
+| 2    | Frontend layout, SQLite models, JWT auth  |
 | 3    | Feature integration, filters, booking     |
 | 4    | Testing, deployment, final presentation   |
 
@@ -109,6 +87,16 @@ Homexa is a full-stack web platform designed to help students and young professi
 ### Backend
 ```bash
 cd server
-npm install
-npm run dev
+python -m venv venv
+source venv/bin/activate  # or venv\Scripts\activate on Windows
+pip install -r requirements.txt
+python app.py
+```
 
+### Frontend
+Open `client/index.html` in your browser or use VS Code Live Server.
+
+---
+
+## 📄 License
+This project is licensed under the MIT License.
