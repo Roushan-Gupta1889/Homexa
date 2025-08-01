@@ -1,10 +1,11 @@
-# 🏠 Homexa – Smart PG Finder
+# 🏠 Homexa – Smart PG Finder 
 
 **Smarter stays for students — powered by Homexa.**
 
 Homexa is a full-stack web platform designed to help students and young professionals find verified and affordable PG (Paying Guest) accommodations without the hassle of brokers. Built with modern technologies, Homexa simplifies the PG hunting process through location-based filtering, secure login, and clean UI.
 
 ---
+#PRD https://drive.google.com/file/d/1bQ36ljYjPDSN-Ndw9i9hnnyjwppt5WM7/view?usp=drive_link
 
 ## 🚀 Features
 
@@ -81,12 +82,12 @@ Homexa is a full-stack web platform designed to help students and young professi
 
 ## 👥 Team Members
 
-| Name          | Role                          |
-|---------------|-------------------------------|
-| Mohit         | Project Manager & Backend Dev |
-| Arpit Mehla   | Frontend Developer            |
-| Roushan       | Backend Developer             |
-| Amit Dole     | Testing & Deployment          |
+| Name               | Role                          |
+|-------------- -----|-------------------------------|
+| Mohit              | Project Manager & Backend Dev |
+| Arpit Mehla,Amit   | Frontend Developer            |
+| Roushan,Mohit      | Backend Developer             |
+| Amit Dole,Arpit    | Testing & Deployment          |
 
 ---
 
