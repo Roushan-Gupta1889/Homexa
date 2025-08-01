@@ -6,7 +6,7 @@ Homexa is a full-stack web platform designed to help students and young professi
 
 ---
 
-## 🚀 Features
+## Features
 
 - 🔍 Filter PGs by budget, location, and amenities  
 - ✅ Verified listings only (no brokers)  
