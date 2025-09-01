@@ -1,0 +1,2639 @@
+[
+  {
+    "id": 1,
+    "title": "Koramangala Residency",
+    "city": "Bengaluru",
+    "area": "Koramangala",
+    "distance": "1.9 km from city center",
+    "price": 6500,
+    "sharing": "Triple",
+    "meals": "Pure Veg",
+    "rating": 3.5,
+    "reviews": 171,
+    "verified": true,
+    "amenities": [
+      "wifi",
+      "meals_included",
+      "cctv",
+      "power_backup",
+      "parking",
+      "study_room"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg1_img1/800/600",
+      "https://picsum.photos/seed/pg1_img2/800/600",
+      "https://picsum.photos/seed/pg1_img3/800/600"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Indiranagar Stay",
+    "city": "Bengaluru",
+    "area": "Indiranagar",
+    "distance": "1.1 km from city center",
+    "price": 13000,
+    "sharing": "Single",
+    "meals": "Veg + Non-Veg",
+    "rating": 3.9,
+    "reviews": 50,
+    "verified": true,
+    "amenities": [
+      "ac",
+      "cctv",
+      "power_backup",
+      "gym",
+      "study_room"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg2_img1/800/600",
+      "https://picsum.photos/seed/pg2_img2/800/600",
+      "https://picsum.photos/seed/pg2_img3/800/600"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Electronic City Hostel",
+    "city": "Bengaluru",
+    "area": "Electronic City",
+    "distance": "0.6 km from city center",
+    "price": 10500,
+    "sharing": "Single",
+    "meals": "Self Cooking",
+    "rating": 3.5,
+    "reviews": 114,
+    "verified": false,
+    "amenities": [
+      "wifi",
+      "ac",
+      "meals_included",
+      "housekeeping",
+      "gym",
+      "study_room"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg3_img1/800/600",
+      "https://picsum.photos/seed/pg3_img2/800/600",
+      "https://picsum.photos/seed/pg3_img3/800/600"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Koramangala Stay",
+    "city": "Bengaluru",
+    "area": "Koramangala",
+    "distance": "1.5 km from city center",
+    "price": 12500,
+    "sharing": "Single",
+    "meals": "Veg + Non-Veg",
+    "rating": 5.0,
+    "reviews": 39,
+    "verified": true,
+    "amenities": [
+      "laundry",
+      "meals_included",
+      "hot_water",
+      "parking",
+      "gym",
+      "study_room"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg4_img1/800/600",
+      "https://picsum.photos/seed/pg4_img2/800/600",
+      "https://picsum.photos/seed/pg4_img3/800/600"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Indiranagar Coliving",
+    "city": "Bengaluru",
+    "area": "Indiranagar",
+    "distance": "1.6 km from city center",
+    "price": 10000,
+    "sharing": "Single",
+    "meals": "Pure Veg",
+    "rating": 3.7,
+    "reviews": 49,
+    "verified": true,
+    "amenities": [
+      "ac",
+      "laundry",
+      "meals_included",
+      "power_backup",
+      "hot_water",
+      "parking",
+      "gym"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg5_img1/800/600",
+      "https://picsum.photos/seed/pg5_img2/800/600",
+      "https://picsum.photos/seed/pg5_img3/800/600"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "HSR Layout Nest",
+    "city": "Bengaluru",
+    "area": "HSR Layout",
+    "distance": "2.2 km from city center",
+    "price": 15000,
+    "sharing": "Double",
+    "meals": "Self Cooking",
+    "rating": 4.6,
+    "reviews": 140,
+    "verified": false,
+    "amenities": [
+      "wifi",
+      "ac",
+      "laundry",
+      "meals_included",
+      "cctv",
+      "parking",
+      "gym",
+      "study_room"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg6_img1/800/600",
+      "https://picsum.photos/seed/pg6_img2/800/600",
+      "https://picsum.photos/seed/pg6_img3/800/600"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Whitefield Stay",
+    "city": "Bengaluru",
+    "area": "Whitefield",
+    "distance": "2.9 km from city center",
+    "price": 12500,
+    "sharing": "Triple",
+    "meals": "Veg + Non-Veg",
+    "rating": 4.1,
+    "reviews": 133,
+    "verified": true,
+    "amenities": [
+      "wifi",
+      "ac",
+      "laundry",
+      "meals_included",
+      "housekeeping",
+      "power_backup",
+      "hot_water"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg7_img1/800/600",
+      "https://picsum.photos/seed/pg7_img2/800/600",
+      "https://picsum.photos/seed/pg7_img3/800/600"
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Indiranagar Heights",
+    "city": "Bengaluru",
+    "area": "Indiranagar",
+    "distance": "0.7 km from city center",
+    "price": 9000,
+    "sharing": "Triple",
+    "meals": "Veg + Non-Veg",
+    "rating": 3.9,
+    "reviews": 151,
+    "verified": true,
+    "amenities": [
+      "wifi",
+      "cctv",
+      "hot_water",
+      "parking",
+      "gym"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg8_img1/800/600",
+      "https://picsum.photos/seed/pg8_img2/800/600",
+      "https://picsum.photos/seed/pg8_img3/800/600"
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Electronic City Heights",
+    "city": "Bengaluru",
+    "area": "Electronic City",
+    "distance": "1.7 km from city center",
+    "price": 11000,
+    "sharing": "Single",
+    "meals": "Self Cooking",
+    "rating": 3.8,
+    "reviews": 163,
+    "verified": true,
+    "amenities": [
+      "laundry",
+      "housekeeping",
+      "hot_water",
+      "parking",
+      "gym",
+      "study_room"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg9_img1/800/600",
+      "https://picsum.photos/seed/pg9_img2/800/600",
+      "https://picsum.photos/seed/pg9_img3/800/600"
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Indiranagar Homes",
+    "city": "Bengaluru",
+    "area": "Indiranagar",
+    "distance": "1.0 km from city center",
+    "price": 13000,
+    "sharing": "Single",
+    "meals": "Self Cooking",
+    "rating": 4.8,
+    "reviews": 27,
+    "verified": true,
+    "amenities": [
+      "wifi",
+      "ac",
+      "laundry",
+      "meals_included",
+      "housekeeping",
+      "hot_water",
+      "gym",
+      "study_room"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg10_img1/800/600",
+      "https://picsum.photos/seed/pg10_img2/800/600",
+      "https://picsum.photos/seed/pg10_img3/800/600"
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Indiranagar Heights",
+    "city": "Bengaluru",
+    "area": "Indiranagar",
+    "distance": "1.2 km from city center",
+    "price": 10000,
+    "sharing": "Single",
+    "meals": "Self Cooking",
+    "rating": 4.7,
+    "reviews": 116,
+    "verified": true,
+    "amenities": [
+      "laundry",
+      "meals_included",
+      "housekeeping",
+      "cctv",
+      "hot_water",
+      "study_room"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg11_img1/800/600",
+      "https://picsum.photos/seed/pg11_img2/800/600",
+      "https://picsum.photos/seed/pg11_img3/800/600"
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Indiranagar Coliving",
+    "city": "Bengaluru",
+    "area": "Indiranagar",
+    "distance": "2.5 km from city center",
+    "price": 14000,
+    "sharing": "Single",
+    "meals": "Veg + Non-Veg",
+    "rating": 4.7,
+    "reviews": 78,
+    "verified": true,
+    "amenities": [
+      "wifi",
+      "ac",
+      "laundry",
+      "cctv",
+      "power_backup",
+      "parking",
+      "gym",
+      "study_room"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg12_img1/800/600",
+      "https://picsum.photos/seed/pg12_img2/800/600",
+      "https://picsum.photos/seed/pg12_img3/800/600"
+    ]
+  },
+  {
+    "id": 13,
+    "title": "HSR Layout Stay",
+    "city": "Bengaluru",
+    "area": "HSR Layout",
+    "distance": "2.6 km from city center",
+    "price": 9500,
+    "sharing": "Single",
+    "meals": "Veg + Non-Veg",
+    "rating": 3.9,
+    "reviews": 86,
+    "verified": true,
+    "amenities": [
+      "wifi",
+      "ac",
+      "power_backup",
+      "parking",
+      "study_room"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg13_img1/800/600",
+      "https://picsum.photos/seed/pg13_img2/800/600",
+      "https://picsum.photos/seed/pg13_img3/800/600"
+    ]
+  },
+  {
+    "id": 14,
+    "title": "HSR Layout Stay",
+    "city": "Bengaluru",
+    "area": "HSR Layout",
+    "distance": "1.6 km from city center",
+    "price": 9000,
+    "sharing": "Double",
+    "meals": "Pure Veg",
+    "rating": 4.4,
+    "reviews": 178,
+    "verified": true,
+    "amenities": [
+      "ac",
+      "laundry",
+      "housekeeping",
+      "cctv",
+      "power_backup",
+      "hot_water",
+      "parking",
+      "gym"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg14_img1/800/600",
+      "https://picsum.photos/seed/pg14_img2/800/600",
+      "https://picsum.photos/seed/pg14_img3/800/600"
+    ]
+  },
+  {
+    "id": 15,
+    "title": "Koramangala Heights",
+    "city": "Bengaluru",
+    "area": "Koramangala",
+    "distance": "1.6 km from city center",
+    "price": 15500,
+    "sharing": "Single",
+    "meals": "Veg + Non-Veg",
+    "rating": 3.7,
+    "reviews": 147,
+    "verified": true,
+    "amenities": [
+      "ac",
+      "laundry",
+      "housekeeping",
+      "parking",
+      "gym"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg15_img1/800/600",
+      "https://picsum.photos/seed/pg15_img2/800/600",
+      "https://picsum.photos/seed/pg15_img3/800/600"
+    ]
+  },
+  {
+    "id": 16,
+    "title": "Koramangala Heights",
+    "city": "Bengaluru",
+    "area": "Koramangala",
+    "distance": "1.3 km from city center",
+    "price": 10000,
+    "sharing": "Triple",
+    "meals": "Pure Veg",
+    "rating": 4.0,
+    "reviews": 149,
+    "verified": true,
+    "amenities": [
+      "ac",
+      "laundry",
+      "meals_included",
+      "housekeeping",
+      "cctv",
+      "hot_water",
+      "gym"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg16_img1/800/600",
+      "https://picsum.photos/seed/pg16_img2/800/600",
+      "https://picsum.photos/seed/pg16_img3/800/600"
+    ]
+  },
+  {
+    "id": 17,
+    "title": "Mukherjee Nagar Coliving",
+    "city": "Delhi",
+    "area": "Mukherjee Nagar",
+    "distance": "2.9 km from city center",
+    "price": 12500,
+    "sharing": "Double",
+    "meals": "Pure Veg",
+    "rating": 4.9,
+    "reviews": 58,
+    "verified": true,
+    "amenities": [
+      "ac",
+      "meals_included",
+      "housekeeping",
+      "cctv",
+      "hot_water",
+      "gym",
+      "study_room"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg17_img1/800/600",
+      "https://picsum.photos/seed/pg17_img2/800/600",
+      "https://picsum.photos/seed/pg17_img3/800/600"
+    ]
+  },
+  {
+    "id": 18,
+    "title": "Mukherjee Nagar Hostel",
+    "city": "Delhi",
+    "area": "Mukherjee Nagar",
+    "distance": "0.9 km from city center",
+    "price": 13500,
+    "sharing": "Triple",
+    "meals": "Veg + Non-Veg",
+    "rating": 3.9,
+    "reviews": 108,
+    "verified": true,
+    "amenities": [
+      "ac",
+      "meals_included",
+      "housekeeping",
+      "cctv",
+      "hot_water",
+      "study_room"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg18_img1/800/600",
+      "https://picsum.photos/seed/pg18_img2/800/600",
+      "https://picsum.photos/seed/pg18_img3/800/600"
+    ]
+  },
+  {
+    "id": 19,
+    "title": "Mukherjee Nagar Nest",
+    "city": "Delhi",
+    "area": "Mukherjee Nagar",
+    "distance": "1.2 km from city center",
+    "price": 13500,
+    "sharing": "Triple",
+    "meals": "Pure Veg",
+    "rating": 4.7,
+    "reviews": 21,
+    "verified": false,
+    "amenities": [
+      "wifi",
+      "laundry",
+      "housekeeping",
+      "cctv",
+      "power_backup",
+      "hot_water",
+      "parking"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg19_img1/800/600",
+      "https://picsum.photos/seed/pg19_img2/800/600",
+      "https://picsum.photos/seed/pg19_img3/800/600"
+    ]
+  },
+  {
+    "id": 20,
+    "title": "Lajpat Nagar Heights",
+    "city": "Delhi",
+    "area": "Lajpat Nagar",
+    "distance": "1.3 km from city center",
+    "price": 7500,
+    "sharing": "Triple",
+    "meals": "Self Cooking",
+    "rating": 4.2,
+    "reviews": 107,
+    "verified": true,
+    "amenities": [
+      "ac",
+      "meals_included",
+      "housekeeping",
+      "cctv",
+      "power_backup",
+      "gym",
+      "study_room"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg20_img1/800/600",
+      "https://picsum.photos/seed/pg20_img2/800/600",
+      "https://picsum.photos/seed/pg20_img3/800/600"
+    ]
+  },
+  {
+    "id": 21,
+    "title": "Saket Coliving",
+    "city": "Delhi",
+    "area": "Saket",
+    "distance": "2.9 km from city center",
+    "price": 7500,
+    "sharing": "Double",
+    "meals": "Pure Veg",
+    "rating": 4.5,
+    "reviews": 176,
+    "verified": true,
+    "amenities": [
+      "wifi",
+      "ac",
+      "laundry",
+      "housekeeping",
+      "power_backup",
+      "hot_water"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg21_img1/800/600",
+      "https://picsum.photos/seed/pg21_img2/800/600",
+      "https://picsum.photos/seed/pg21_img3/800/600"
+    ]
+  },
+  {
+    "id": 22,
+    "title": "Dwarka Coliving",
+    "city": "Delhi",
+    "area": "Dwarka",
+    "distance": "0.6 km from city center",
+    "price": 9000,
+    "sharing": "Double",
+    "meals": "Veg + Non-Veg",
+    "rating": 4.2,
+    "reviews": 19,
+    "verified": true,
+    "amenities": [
+      "ac",
+      "laundry",
+      "housekeeping",
+      "cctv",
+      "power_backup",
+      "parking",
+      "gym"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg22_img1/800/600",
+      "https://picsum.photos/seed/pg22_img2/800/600",
+      "https://picsum.photos/seed/pg22_img3/800/600"
+    ]
+  },
+  {
+    "id": 23,
+    "title": "Lajpat Nagar Residency",
+    "city": "Delhi",
+    "area": "Lajpat Nagar",
+    "distance": "2.6 km from city center",
+    "price": 7000,
+    "sharing": "Single",
+    "meals": "Veg + Non-Veg",
+    "rating": 4.9,
+    "reviews": 94,
+    "verified": true,
+    "amenities": [
+      "wifi",
+      "meals_included",
+      "housekeeping",
+      "power_backup",
+      "gym"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg23_img1/800/600",
+      "https://picsum.photos/seed/pg23_img2/800/600",
+      "https://picsum.photos/seed/pg23_img3/800/600"
+    ]
+  },
+  {
+    "id": 24,
+    "title": "Dwarka Coliving",
+    "city": "Delhi",
+    "area": "Dwarka",
+    "distance": "0.6 km from city center",
+    "price": 5500,
+    "sharing": "Triple",
+    "meals": "Self Cooking",
+    "rating": 4.8,
+    "reviews": 122,
+    "verified": true,
+    "amenities": [
+      "ac",
+      "laundry",
+      "meals_included",
+      "housekeeping",
+      "cctv",
+      "parking",
+      "study_room"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg24_img1/800/600",
+      "https://picsum.photos/seed/pg24_img2/800/600",
+      "https://picsum.photos/seed/pg24_img3/800/600"
+    ]
+  },
+  {
+    "id": 25,
+    "title": "Dwarka Residency",
+    "city": "Delhi",
+    "area": "Dwarka",
+    "distance": "2.3 km from city center",
+    "price": 10000,
+    "sharing": "Triple",
+    "meals": "Veg + Non-Veg",
+    "rating": 4.9,
+    "reviews": 13,
+    "verified": false,
+    "amenities": [
+      "meals_included",
+      "housekeeping",
+      "power_backup",
+      "hot_water",
+      "study_room"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg25_img1/800/600",
+      "https://picsum.photos/seed/pg25_img2/800/600",
+      "https://picsum.photos/seed/pg25_img3/800/600"
+    ]
+  },
+  {
+    "id": 26,
+    "title": "Saket Stay",
+    "city": "Delhi",
+    "area": "Saket",
+    "distance": "2.9 km from city center",
+    "price": 10500,
+    "sharing": "Single",
+    "meals": "Self Cooking",
+    "rating": 4.1,
+    "reviews": 177,
+    "verified": false,
+    "amenities": [
+      "ac",
+      "meals_included",
+      "housekeeping",
+      "parking",
+      "study_room"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg26_img1/800/600",
+      "https://picsum.photos/seed/pg26_img2/800/600",
+      "https://picsum.photos/seed/pg26_img3/800/600"
+    ]
+  },
+  {
+    "id": 27,
+    "title": "Lajpat Nagar Stay",
+    "city": "Delhi",
+    "area": "Lajpat Nagar",
+    "distance": "1.2 km from city center",
+    "price": 6000,
+    "sharing": "Double",
+    "meals": "Pure Veg",
+    "rating": 3.6,
+    "reviews": 77,
+    "verified": false,
+    "amenities": [
+      "wifi",
+      "ac",
+      "laundry",
+      "power_backup",
+      "hot_water",
+      "parking"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg27_img1/800/600",
+      "https://picsum.photos/seed/pg27_img2/800/600",
+      "https://picsum.photos/seed/pg27_img3/800/600"
+    ]
+  },
+  {
+    "id": 28,
+    "title": "Saket Homes",
+    "city": "Delhi",
+    "area": "Saket",
+    "distance": "0.5 km from city center",
+    "price": 12500,
+    "sharing": "Double",
+    "meals": "Pure Veg",
+    "rating": 4.5,
+    "reviews": 176,
+    "verified": true,
+    "amenities": [
+      "ac",
+      "meals_included",
+      "housekeeping",
+      "cctv",
+      "power_backup",
+      "hot_water",
+      "parking",
+      "gym"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg28_img1/800/600",
+      "https://picsum.photos/seed/pg28_img2/800/600",
+      "https://picsum.photos/seed/pg28_img3/800/600"
+    ]
+  },
+  {
+    "id": 29,
+    "title": "Mukherjee Nagar Coliving",
+    "city": "Delhi",
+    "area": "Mukherjee Nagar",
+    "distance": "2.6 km from city center",
+    "price": 9000,
+    "sharing": "Triple",
+    "meals": "Veg + Non-Veg",
+    "rating": 4.0,
+    "reviews": 182,
+    "verified": true,
+    "amenities": [
+      "ac",
+      "cctv",
+      "power_backup",
+      "hot_water",
+      "parking",
+      "gym",
+      "study_room"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg29_img1/800/600",
+      "https://picsum.photos/seed/pg29_img2/800/600",
+      "https://picsum.photos/seed/pg29_img3/800/600"
+    ]
+  },
+  {
+    "id": 30,
+    "title": "Dwarka Heights",
+    "city": "Delhi",
+    "area": "Dwarka",
+    "distance": "2.0 km from city center",
+    "price": 7500,
+    "sharing": "Double",
+    "meals": "Veg + Non-Veg",
+    "rating": 4.1,
+    "reviews": 91,
+    "verified": false,
+    "amenities": [
+      "wifi",
+      "laundry",
+      "power_backup",
+      "hot_water",
+      "gym"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg30_img1/800/600",
+      "https://picsum.photos/seed/pg30_img2/800/600",
+      "https://picsum.photos/seed/pg30_img3/800/600"
+    ]
+  },
+  {
+    "id": 31,
+    "title": "Mukherjee Nagar Homes",
+    "city": "Delhi",
+    "area": "Mukherjee Nagar",
+    "distance": "2.7 km from city center",
+    "price": 11500,
+    "sharing": "Triple",
+    "meals": "Self Cooking",
+    "rating": 4.8,
+    "reviews": 134,
+    "verified": true,
+    "amenities": [
+      "wifi",
+      "ac",
+      "laundry",
+      "housekeeping",
+      "cctv",
+      "power_backup",
+      "hot_water",
+      "study_room"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg31_img1/800/600",
+      "https://picsum.photos/seed/pg31_img2/800/600",
+      "https://picsum.photos/seed/pg31_img3/800/600"
+    ]
+  },
+  {
+    "id": 32,
+    "title": "Dwarka Hostel",
+    "city": "Delhi",
+    "area": "Dwarka",
+    "distance": "0.9 km from city center",
+    "price": 5500,
+    "sharing": "Double",
+    "meals": "Pure Veg",
+    "rating": 3.6,
+    "reviews": 27,
+    "verified": true,
+    "amenities": [
+      "wifi",
+      "laundry",
+      "meals_included",
+      "housekeeping",
+      "cctv",
+      "power_backup",
+      "gym"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg32_img1/800/600",
+      "https://picsum.photos/seed/pg32_img2/800/600",
+      "https://picsum.photos/seed/pg32_img3/800/600"
+    ]
+  },
+  {
+    "id": 33,
+    "title": "Salt Lake Nest",
+    "city": "Kolkata",
+    "area": "Salt Lake",
+    "distance": "3.0 km from city center",
+    "price": 8500,
+    "sharing": "Single",
+    "meals": "Self Cooking",
+    "rating": 4.5,
+    "reviews": 83,
+    "verified": true,
+    "amenities": [
+      "ac",
+      "laundry",
+      "meals_included",
+      "housekeeping",
+      "hot_water",
+      "parking"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg33_img1/800/600",
+      "https://picsum.photos/seed/pg33_img2/800/600",
+      "https://picsum.photos/seed/pg33_img3/800/600"
+    ]
+  },
+  {
+    "id": 34,
+    "title": "Jadavpur Residency",
+    "city": "Kolkata",
+    "area": "Jadavpur",
+    "distance": "2.9 km from city center",
+    "price": 6500,
+    "sharing": "Triple",
+    "meals": "Self Cooking",
+    "rating": 4.6,
+    "reviews": 121,
+    "verified": true,
+    "amenities": [
+      "wifi",
+      "ac",
+      "meals_included",
+      "housekeeping",
+      "power_backup",
+      "gym",
+      "study_room"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg34_img1/800/600",
+      "https://picsum.photos/seed/pg34_img2/800/600",
+      "https://picsum.photos/seed/pg34_img3/800/600"
+    ]
+  },
+  {
+    "id": 35,
+    "title": "Salt Lake Coliving",
+    "city": "Kolkata",
+    "area": "Salt Lake",
+    "distance": "2.7 km from city center",
+    "price": 6500,
+    "sharing": "Single",
+    "meals": "Self Cooking",
+    "rating": 4.6,
+    "reviews": 190,
+    "verified": true,
+    "amenities": [
+      "ac",
+      "laundry",
+      "power_backup",
+      "hot_water",
+      "study_room"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg35_img1/800/600",
+      "https://picsum.photos/seed/pg35_img2/800/600",
+      "https://picsum.photos/seed/pg35_img3/800/600"
+    ]
+  },
+  {
+    "id": 36,
+    "title": "Jadavpur Residency",
+    "city": "Kolkata",
+    "area": "Jadavpur",
+    "distance": "1.1 km from city center",
+    "price": 5500,
+    "sharing": "Triple",
+    "meals": "Self Cooking",
+    "rating": 4.2,
+    "reviews": 187,
+    "verified": true,
+    "amenities": [
+      "ac",
+      "meals_included",
+      "housekeeping",
+      "hot_water",
+      "parking",
+      "gym",
+      "study_room"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg36_img1/800/600",
+      "https://picsum.photos/seed/pg36_img2/800/600",
+      "https://picsum.photos/seed/pg36_img3/800/600"
+    ]
+  },
+  {
+    "id": 37,
+    "title": "Howrah Nest",
+    "city": "Kolkata",
+    "area": "Howrah",
+    "distance": "2.4 km from city center",
+    "price": 9500,
+    "sharing": "Double",
+    "meals": "Veg + Non-Veg",
+    "rating": 3.5,
+    "reviews": 93,
+    "verified": true,
+    "amenities": [
+      "wifi",
+      "ac",
+      "housekeeping",
+      "hot_water",
+      "parking",
+      "gym",
+      "study_room"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg37_img1/800/600",
+      "https://picsum.photos/seed/pg37_img2/800/600",
+      "https://picsum.photos/seed/pg37_img3/800/600"
+    ]
+  },
+  {
+    "id": 38,
+    "title": "New Town Homes",
+    "city": "Kolkata",
+    "area": "New Town",
+    "distance": "1.5 km from city center",
+    "price": 7500,
+    "sharing": "Double",
+    "meals": "Self Cooking",
+    "rating": 3.9,
+    "reviews": 105,
+    "verified": false,
+    "amenities": [
+      "laundry",
+      "meals_included",
+      "housekeeping",
+      "cctv",
+      "power_backup",
+      "hot_water",
+      "gym",
+      "study_room"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg38_img1/800/600",
+      "https://picsum.photos/seed/pg38_img2/800/600",
+      "https://picsum.photos/seed/pg38_img3/800/600"
+    ]
+  },
+  {
+    "id": 39,
+    "title": "Howrah Hostel",
+    "city": "Kolkata",
+    "area": "Howrah",
+    "distance": "1.8 km from city center",
+    "price": 7000,
+    "sharing": "Double",
+    "meals": "Veg + Non-Veg",
+    "rating": 3.9,
+    "reviews": 115,
+    "verified": true,
+    "amenities": [
+      "meals_included",
+      "housekeeping",
+      "cctv",
+      "hot_water",
+      "parking",
+      "study_room"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg39_img1/800/600",
+      "https://picsum.photos/seed/pg39_img2/800/600",
+      "https://picsum.photos/seed/pg39_img3/800/600"
+    ]
+  },
+  {
+    "id": 40,
+    "title": "Howrah Heights",
+    "city": "Kolkata",
+    "area": "Howrah",
+    "distance": "0.8 km from city center",
+    "price": 9000,
+    "sharing": "Single",
+    "meals": "Veg + Non-Veg",
+    "rating": 4.7,
+    "reviews": 53,
+    "verified": true,
+    "amenities": [
+      "wifi",
+      "ac",
+      "meals_included",
+      "housekeeping",
+      "cctv",
+      "parking",
+      "study_room"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg40_img1/800/600",
+      "https://picsum.photos/seed/pg40_img2/800/600",
+      "https://picsum.photos/seed/pg40_img3/800/600"
+    ]
+  },
+  {
+    "id": 41,
+    "title": "Salt Lake Nest",
+    "city": "Kolkata",
+    "area": "Salt Lake",
+    "distance": "2.0 km from city center",
+    "price": 4500,
+    "sharing": "Double",
+    "meals": "Veg + Non-Veg",
+    "rating": 4.4,
+    "reviews": 107,
+    "verified": true,
+    "amenities": [
+      "ac",
+      "housekeeping",
+      "power_backup",
+      "hot_water",
+      "study_room"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg41_img1/800/600",
+      "https://picsum.photos/seed/pg41_img2/800/600",
+      "https://picsum.photos/seed/pg41_img3/800/600"
+    ]
+  },
+  {
+    "id": 42,
+    "title": "Salt Lake Coliving",
+    "city": "Kolkata",
+    "area": "Salt Lake",
+    "distance": "0.7 km from city center",
+    "price": 5500,
+    "sharing": "Single",
+    "meals": "Veg + Non-Veg",
+    "rating": 3.9,
+    "reviews": 159,
+    "verified": true,
+    "amenities": [
+      "wifi",
+      "laundry",
+      "housekeeping",
+      "cctv",
+      "power_backup",
+      "hot_water",
+      "parking",
+      "study_room"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg42_img1/800/600",
+      "https://picsum.photos/seed/pg42_img2/800/600",
+      "https://picsum.photos/seed/pg42_img3/800/600"
+    ]
+  },
+  {
+    "id": 43,
+    "title": "Howrah Hostel",
+    "city": "Kolkata",
+    "area": "Howrah",
+    "distance": "1.5 km from city center",
+    "price": 5000,
+    "sharing": "Triple",
+    "meals": "Veg + Non-Veg",
+    "rating": 4.2,
+    "reviews": 75,
+    "verified": true,
+    "amenities": [
+      "wifi",
+      "housekeeping",
+      "power_backup",
+      "hot_water",
+      "gym"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg43_img1/800/600",
+      "https://picsum.photos/seed/pg43_img2/800/600",
+      "https://picsum.photos/seed/pg43_img3/800/600"
+    ]
+  },
+  {
+    "id": 44,
+    "title": "New Town Hostel",
+    "city": "Kolkata",
+    "area": "New Town",
+    "distance": "2.7 km from city center",
+    "price": 6500,
+    "sharing": "Triple",
+    "meals": "Pure Veg",
+    "rating": 4.5,
+    "reviews": 129,
+    "verified": true,
+    "amenities": [
+      "wifi",
+      "ac",
+      "laundry",
+      "meals_included",
+      "housekeeping",
+      "hot_water",
+      "parking",
+      "study_room"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg44_img1/800/600",
+      "https://picsum.photos/seed/pg44_img2/800/600",
+      "https://picsum.photos/seed/pg44_img3/800/600"
+    ]
+  },
+  {
+    "id": 45,
+    "title": "New Town Hostel",
+    "city": "Kolkata",
+    "area": "New Town",
+    "distance": "0.5 km from city center",
+    "price": 6500,
+    "sharing": "Double",
+    "meals": "Veg + Non-Veg",
+    "rating": 4.5,
+    "reviews": 50,
+    "verified": true,
+    "amenities": [
+      "wifi",
+      "ac",
+      "laundry",
+      "housekeeping",
+      "cctv",
+      "power_backup",
+      "hot_water",
+      "study_room"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg45_img1/800/600",
+      "https://picsum.photos/seed/pg45_img2/800/600",
+      "https://picsum.photos/seed/pg45_img3/800/600"
+    ]
+  },
+  {
+    "id": 46,
+    "title": "Salt Lake Hostel",
+    "city": "Kolkata",
+    "area": "Salt Lake",
+    "distance": "1.1 km from city center",
+    "price": 5000,
+    "sharing": "Single",
+    "meals": "Self Cooking",
+    "rating": 4.9,
+    "reviews": 160,
+    "verified": true,
+    "amenities": [
+      "wifi",
+      "laundry",
+      "meals_included",
+      "housekeeping",
+      "cctv",
+      "power_backup",
+      "hot_water",
+      "gym"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg46_img1/800/600",
+      "https://picsum.photos/seed/pg46_img2/800/600",
+      "https://picsum.photos/seed/pg46_img3/800/600"
+    ]
+  },
+  {
+    "id": 47,
+    "title": "Garia Coliving",
+    "city": "Kolkata",
+    "area": "Garia",
+    "distance": "1.0 km from city center",
+    "price": 7000,
+    "sharing": "Double",
+    "meals": "Veg + Non-Veg",
+    "rating": 4.9,
+    "reviews": 186,
+    "verified": false,
+    "amenities": [
+      "ac",
+      "laundry",
+      "housekeeping",
+      "cctv",
+      "hot_water"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg47_img1/800/600",
+      "https://picsum.photos/seed/pg47_img2/800/600",
+      "https://picsum.photos/seed/pg47_img3/800/600"
+    ]
+  },
+  {
+    "id": 48,
+    "title": "Salt Lake Coliving",
+    "city": "Kolkata",
+    "area": "Salt Lake",
+    "distance": "3.0 km from city center",
+    "price": 7500,
+    "sharing": "Triple",
+    "meals": "Self Cooking",
+    "rating": 4.8,
+    "reviews": 60,
+    "verified": false,
+    "amenities": [
+      "wifi",
+      "laundry",
+      "meals_included",
+      "housekeeping",
+      "cctv",
+      "hot_water",
+      "gym",
+      "study_room"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg48_img1/800/600",
+      "https://picsum.photos/seed/pg48_img2/800/600",
+      "https://picsum.photos/seed/pg48_img3/800/600"
+    ]
+  },
+  {
+    "id": 49,
+    "title": "Velachery Residency",
+    "city": "Chennai",
+    "area": "Velachery",
+    "distance": "2.4 km from city center",
+    "price": 5000,
+    "sharing": "Single",
+    "meals": "Self Cooking",
+    "rating": 4.3,
+    "reviews": 162,
+    "verified": true,
+    "amenities": [
+      "laundry",
+      "power_backup",
+      "gym",
+      "study_room",
+      "hot_water",
+      "cctv",
+      "wifi"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg49_img1/800/600",
+      "https://picsum.photos/seed/pg49_img2/800/600",
+      "https://picsum.photos/seed/pg49_img3/800/600"
+    ]
+  },
+  {
+    "id": 50,
+    "title": "Baner Residency",
+    "city": "Pune",
+    "area": "Baner",
+    "distance": "1.5 km from city center",
+    "price": 5000,
+    "sharing": "Triple",
+    "meals": "Self Cooking",
+    "rating": 3.6,
+    "reviews": 125,
+    "verified": true,
+    "amenities": [
+      "cctv",
+      "ac",
+      "laundry",
+      "wifi",
+      "parking",
+      "study_room",
+      "power_backup",
+      "gym"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg50_img1/800/600",
+      "https://picsum.photos/seed/pg50_img2/800/600",
+      "https://picsum.photos/seed/pg50_img3/800/600"
+    ]
+  },
+  {
+    "id": 51,
+    "title": "Viman Nagar Heights",
+    "city": "Pune",
+    "area": "Viman Nagar",
+    "distance": "1.9 km from city center",
+    "price": 6500,
+    "sharing": "Single",
+    "meals": "Self Cooking",
+    "rating": 4.5,
+    "reviews": 68,
+    "verified": false,
+    "amenities": [
+      "power_backup",
+      "study_room",
+      "hot_water",
+      "parking",
+      "gym",
+      "meals_included"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg51_img1/800/600",
+      "https://picsum.photos/seed/pg51_img2/800/600",
+      "https://picsum.photos/seed/pg51_img3/800/600"
+    ]
+  },
+  {
+    "id": 52,
+    "title": "Secunderabad Heights",
+    "city": "Hyderabad",
+    "area": "Secunderabad",
+    "distance": "3.5 km from city center",
+    "price": 6500,
+    "sharing": "Single",
+    "meals": "Veg + Non-Veg",
+    "rating": 4.2,
+    "reviews": 177,
+    "verified": false,
+    "amenities": [
+      "parking",
+      "power_backup",
+      "study_room",
+      "housekeeping",
+      "wifi",
+      "laundry",
+      "gym"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg52_img1/800/600",
+      "https://picsum.photos/seed/pg52_img2/800/600",
+      "https://picsum.photos/seed/pg52_img3/800/600"
+    ]
+  },
+  {
+    "id": 53,
+    "title": "Jadavpur Homes",
+    "city": "Kolkata",
+    "area": "Jadavpur",
+    "distance": "1.8 km from city center",
+    "price": 6500,
+    "sharing": "Double",
+    "meals": "Pure Veg",
+    "rating": 3.9,
+    "reviews": 111,
+    "verified": true,
+    "amenities": [
+      "power_backup",
+      "housekeeping",
+      "ac",
+      "meals_included",
+      "laundry"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg53_img1/800/600",
+      "https://picsum.photos/seed/pg53_img2/800/600",
+      "https://picsum.photos/seed/pg53_img3/800/600"
+    ]
+  },
+  {
+    "id": 54,
+    "title": "Kothrud Coliving",
+    "city": "Pune",
+    "area": "Kothrud",
+    "distance": "1.4 km from city center",
+    "price": 15000,
+    "sharing": "Triple",
+    "meals": "Self Cooking",
+    "rating": 4.7,
+    "reviews": 175,
+    "verified": true,
+    "amenities": [
+      "wifi",
+      "housekeeping",
+      "laundry",
+      "power_backup",
+      "meals_included",
+      "hot_water",
+      "cctv"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg54_img1/800/600",
+      "https://picsum.photos/seed/pg54_img2/800/600",
+      "https://picsum.photos/seed/pg54_img3/800/600"
+    ]
+  },
+  {
+    "id": 55,
+    "title": "Anna Nagar Residency",
+    "city": "Chennai",
+    "area": "Anna Nagar",
+    "distance": "2.9 km from city center",
+    "price": 6500,
+    "sharing": "Double",
+    "meals": "Pure Veg",
+    "rating": 4.9,
+    "reviews": 117,
+    "verified": true,
+    "amenities": [
+      "laundry",
+      "study_room",
+      "parking",
+      "cctv",
+      "wifi",
+      "meals_included",
+      "gym"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg55_img1/800/600",
+      "https://picsum.photos/seed/pg55_img2/800/600",
+      "https://picsum.photos/seed/pg55_img3/800/600"
+    ]
+  },
+  {
+    "id": 56,
+    "title": "Banjara Hills Nest",
+    "city": "Hyderabad",
+    "area": "Banjara Hills",
+    "distance": "1.0 km from city center",
+    "price": 12500,
+    "sharing": "Triple",
+    "meals": "Self Cooking",
+    "rating": 4.7,
+    "reviews": 30,
+    "verified": true,
+    "amenities": [
+      "parking",
+      "ac",
+      "wifi",
+      "housekeeping",
+      "gym"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg56_img1/800/600",
+      "https://picsum.photos/seed/pg56_img2/800/600",
+      "https://picsum.photos/seed/pg56_img3/800/600"
+    ]
+  },
+  {
+    "id": 57,
+    "title": "Garia Residency",
+    "city": "Kolkata",
+    "area": "Garia",
+    "distance": "3.5 km from city center",
+    "price": 6500,
+    "sharing": "Triple",
+    "meals": "Self Cooking",
+    "rating": 3.6,
+    "reviews": 77,
+    "verified": true,
+    "amenities": [
+      "meals_included",
+      "cctv",
+      "hot_water",
+      "laundry",
+      "power_backup",
+      "ac",
+      "housekeeping"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg57_img1/800/600",
+      "https://picsum.photos/seed/pg57_img2/800/600",
+      "https://picsum.photos/seed/pg57_img3/800/600"
+    ]
+  },
+  {
+    "id": 58,
+    "title": "Kothrud Nest",
+    "city": "Pune",
+    "area": "Kothrud",
+    "distance": "1.3 km from city center",
+    "price": 5000,
+    "sharing": "Single",
+    "meals": "Pure Veg",
+    "rating": 4.8,
+    "reviews": 33,
+    "verified": true,
+    "amenities": [
+      "cctv",
+      "meals_included",
+      "gym",
+      "power_backup",
+      "ac"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg58_img1/800/600",
+      "https://picsum.photos/seed/pg58_img2/800/600",
+      "https://picsum.photos/seed/pg58_img3/800/600"
+    ]
+  },
+  {
+    "id": 59,
+    "title": "Electronic City Stay",
+    "city": "Bengaluru",
+    "area": "Electronic City",
+    "distance": "1.9 km from city center",
+    "price": 12500,
+    "sharing": "Double",
+    "meals": "Self Cooking",
+    "rating": 4.3,
+    "reviews": 94,
+    "verified": true,
+    "amenities": [
+      "cctv",
+      "study_room",
+      "housekeeping",
+      "laundry",
+      "power_backup",
+      "hot_water"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg59_img1/800/600",
+      "https://picsum.photos/seed/pg59_img2/800/600",
+      "https://picsum.photos/seed/pg59_img3/800/600"
+    ]
+  },
+  {
+    "id": 60,
+    "title": "Electronic City Coliving",
+    "city": "Bengaluru",
+    "area": "Electronic City",
+    "distance": "1.8 km from city center",
+    "price": 6500,
+    "sharing": "Single",
+    "meals": "Self Cooking",
+    "rating": 4.0,
+    "reviews": 86,
+    "verified": true,
+    "amenities": [
+      "parking",
+      "meals_included",
+      "cctv",
+      "ac",
+      "housekeeping"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg60_img1/800/600",
+      "https://picsum.photos/seed/pg60_img2/800/600",
+      "https://picsum.photos/seed/pg60_img3/800/600"
+    ]
+  },
+  {
+    "id": 61,
+    "title": "Gachibowli Homes",
+    "city": "Hyderabad",
+    "area": "Gachibowli",
+    "distance": "2.7 km from city center",
+    "price": 9000,
+    "sharing": "Triple",
+    "meals": "Veg + Non-Veg",
+    "rating": 3.7,
+    "reviews": 141,
+    "verified": true,
+    "amenities": [
+      "study_room",
+      "gym",
+      "wifi",
+      "parking",
+      "power_backup",
+      "hot_water"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg61_img1/800/600",
+      "https://picsum.photos/seed/pg61_img2/800/600",
+      "https://picsum.photos/seed/pg61_img3/800/600"
+    ]
+  },
+  {
+    "id": 62,
+    "title": "Electronic City Heights",
+    "city": "Bengaluru",
+    "area": "Electronic City",
+    "distance": "1.0 km from city center",
+    "price": 15000,
+    "sharing": "Triple",
+    "meals": "Self Cooking",
+    "rating": 4.0,
+    "reviews": 141,
+    "verified": true,
+    "amenities": [
+      "housekeeping",
+      "wifi",
+      "study_room",
+      "cctv",
+      "gym"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg62_img1/800/600",
+      "https://picsum.photos/seed/pg62_img2/800/600",
+      "https://picsum.photos/seed/pg62_img3/800/600"
+    ]
+  },
+  {
+    "id": 63,
+    "title": "Velachery Coliving",
+    "city": "Chennai",
+    "area": "Velachery",
+    "distance": "2.5 km from city center",
+    "price": 15000,
+    "sharing": "Double",
+    "meals": "Self Cooking",
+    "rating": 4.3,
+    "reviews": 97,
+    "verified": false,
+    "amenities": [
+      "cctv",
+      "hot_water",
+      "parking",
+      "meals_included",
+      "study_room",
+      "power_backup",
+      "housekeeping"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg63_img1/800/600",
+      "https://picsum.photos/seed/pg63_img2/800/600",
+      "https://picsum.photos/seed/pg63_img3/800/600"
+    ]
+  },
+  {
+    "id": 64,
+    "title": "Garia Nest",
+    "city": "Kolkata",
+    "area": "Garia",
+    "distance": "1.1 km from city center",
+    "price": 9000,
+    "sharing": "Single",
+    "meals": "Pure Veg",
+    "rating": 4.9,
+    "reviews": 149,
+    "verified": false,
+    "amenities": [
+      "laundry",
+      "hot_water",
+      "wifi",
+      "housekeeping",
+      "study_room",
+      "parking",
+      "gym",
+      "cctv"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg64_img1/800/600",
+      "https://picsum.photos/seed/pg64_img2/800/600",
+      "https://picsum.photos/seed/pg64_img3/800/600"
+    ]
+  },
+  {
+    "id": 65,
+    "title": "Andheri Hostel",
+    "city": "Mumbai",
+    "area": "Andheri",
+    "distance": "1.2 km from city center",
+    "price": 10500,
+    "sharing": "Double",
+    "meals": "Self Cooking",
+    "rating": 4.7,
+    "reviews": 95,
+    "verified": true,
+    "amenities": [
+      "meals_included",
+      "wifi",
+      "laundry",
+      "gym",
+      "housekeeping",
+      "study_room",
+      "ac"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg65_img1/800/600",
+      "https://picsum.photos/seed/pg65_img2/800/600",
+      "https://picsum.photos/seed/pg65_img3/800/600"
+    ]
+  },
+  {
+    "id": 66,
+    "title": "Powai Stay",
+    "city": "Mumbai",
+    "area": "Powai",
+    "distance": "3.1 km from city center",
+    "price": 10500,
+    "sharing": "Triple",
+    "meals": "Self Cooking",
+    "rating": 4.9,
+    "reviews": 134,
+    "verified": true,
+    "amenities": [
+      "housekeeping",
+      "ac",
+      "hot_water",
+      "meals_included",
+      "wifi",
+      "power_backup"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg66_img1/800/600",
+      "https://picsum.photos/seed/pg66_img2/800/600",
+      "https://picsum.photos/seed/pg66_img3/800/600"
+    ]
+  },
+  {
+    "id": 67,
+    "title": "Indiranagar Stay",
+    "city": "Bengaluru",
+    "area": "Indiranagar",
+    "distance": "3.2 km from city center",
+    "price": 15000,
+    "sharing": "Triple",
+    "meals": "Self Cooking",
+    "rating": 3.5,
+    "reviews": 43,
+    "verified": true,
+    "amenities": [
+      "wifi",
+      "housekeeping",
+      "meals_included",
+      "ac",
+      "laundry",
+      "power_backup",
+      "parking",
+      "study_room"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg67_img1/800/600",
+      "https://picsum.photos/seed/pg67_img2/800/600",
+      "https://picsum.photos/seed/pg67_img3/800/600"
+    ]
+  },
+  {
+    "id": 68,
+    "title": "Thane Heights",
+    "city": "Mumbai",
+    "area": "Thane",
+    "distance": "1.7 km from city center",
+    "price": 12500,
+    "sharing": "Double",
+    "meals": "Pure Veg",
+    "rating": 4.7,
+    "reviews": 73,
+    "verified": true,
+    "amenities": [
+      "hot_water",
+      "cctv",
+      "ac",
+      "laundry",
+      "study_room",
+      "gym"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg68_img1/800/600",
+      "https://picsum.photos/seed/pg68_img2/800/600",
+      "https://picsum.photos/seed/pg68_img3/800/600"
+    ]
+  },
+  {
+    "id": 69,
+    "title": "Howrah Homes",
+    "city": "Kolkata",
+    "area": "Howrah",
+    "distance": "3.0 km from city center",
+    "price": 5000,
+    "sharing": "Single",
+    "meals": "Veg + Non-Veg",
+    "rating": 3.6,
+    "reviews": 156,
+    "verified": false,
+    "amenities": [
+      "ac",
+      "study_room",
+      "meals_included",
+      "cctv",
+      "parking"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg69_img1/800/600",
+      "https://picsum.photos/seed/pg69_img2/800/600",
+      "https://picsum.photos/seed/pg69_img3/800/600"
+    ]
+  },
+  {
+    "id": 70,
+    "title": "T Nagar Residency",
+    "city": "Chennai",
+    "area": "T Nagar",
+    "distance": "2.1 km from city center",
+    "price": 15000,
+    "sharing": "Single",
+    "meals": "Pure Veg",
+    "rating": 3.6,
+    "reviews": 172,
+    "verified": true,
+    "amenities": [
+      "parking",
+      "laundry",
+      "gym",
+      "wifi",
+      "housekeeping",
+      "ac"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg70_img1/800/600",
+      "https://picsum.photos/seed/pg70_img2/800/600",
+      "https://picsum.photos/seed/pg70_img3/800/600"
+    ]
+  },
+  {
+    "id": 71,
+    "title": "Baner Residency",
+    "city": "Pune",
+    "area": "Baner",
+    "distance": "3.1 km from city center",
+    "price": 5000,
+    "sharing": "Double",
+    "meals": "Self Cooking",
+    "rating": 4.1,
+    "reviews": 112,
+    "verified": false,
+    "amenities": [
+      "parking",
+      "hot_water",
+      "laundry",
+      "study_room",
+      "cctv",
+      "ac",
+      "wifi"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg71_img1/800/600",
+      "https://picsum.photos/seed/pg71_img2/800/600",
+      "https://picsum.photos/seed/pg71_img3/800/600"
+    ]
+  },
+  {
+    "id": 72,
+    "title": "Karol Bagh Residency",
+    "city": "Delhi",
+    "area": "Karol Bagh",
+    "distance": "1.4 km from city center",
+    "price": 9000,
+    "sharing": "Double",
+    "meals": "Veg + Non-Veg",
+    "rating": 4.0,
+    "reviews": 38,
+    "verified": false,
+    "amenities": [
+      "study_room",
+      "hot_water",
+      "cctv",
+      "wifi",
+      "parking"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg72_img1/800/600",
+      "https://picsum.photos/seed/pg72_img2/800/600",
+      "https://picsum.photos/seed/pg72_img3/800/600"
+    ]
+  },
+  {
+    "id": 73,
+    "title": "Madhapur Hostel",
+    "city": "Hyderabad",
+    "area": "Madhapur",
+    "distance": "3.3 km from city center",
+    "price": 6500,
+    "sharing": "Single",
+    "meals": "Self Cooking",
+    "rating": 4.2,
+    "reviews": 103,
+    "verified": false,
+    "amenities": [
+      "hot_water",
+      "wifi",
+      "meals_included",
+      "power_backup",
+      "gym",
+      "study_room",
+      "parking"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg73_img1/800/600",
+      "https://picsum.photos/seed/pg73_img2/800/600",
+      "https://picsum.photos/seed/pg73_img3/800/600"
+    ]
+  },
+  {
+    "id": 74,
+    "title": "T Nagar Hostel",
+    "city": "Chennai",
+    "area": "T Nagar",
+    "distance": "1.7 km from city center",
+    "price": 9000,
+    "sharing": "Double",
+    "meals": "Self Cooking",
+    "rating": 4.1,
+    "reviews": 158,
+    "verified": true,
+    "amenities": [
+      "wifi",
+      "housekeeping",
+      "study_room",
+      "cctv",
+      "meals_included",
+      "ac",
+      "gym"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg74_img1/800/600",
+      "https://picsum.photos/seed/pg74_img2/800/600",
+      "https://picsum.photos/seed/pg74_img3/800/600"
+    ]
+  },
+  {
+    "id": 75,
+    "title": "OMR Residency",
+    "city": "Chennai",
+    "area": "OMR",
+    "distance": "0.8 km from city center",
+    "price": 6500,
+    "sharing": "Triple",
+    "meals": "Pure Veg",
+    "rating": 3.9,
+    "reviews": 160,
+    "verified": true,
+    "amenities": [
+      "laundry",
+      "meals_included",
+      "hot_water",
+      "study_room",
+      "parking",
+      "gym",
+      "wifi",
+      "power_backup"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg75_img1/800/600",
+      "https://picsum.photos/seed/pg75_img2/800/600",
+      "https://picsum.photos/seed/pg75_img3/800/600"
+    ]
+  },
+  {
+    "id": 76,
+    "title": "Howrah Residency",
+    "city": "Kolkata",
+    "area": "Howrah",
+    "distance": "1.5 km from city center",
+    "price": 12500,
+    "sharing": "Double",
+    "meals": "Self Cooking",
+    "rating": 4.6,
+    "reviews": 73,
+    "verified": false,
+    "amenities": [
+      "housekeeping",
+      "laundry",
+      "cctv",
+      "wifi",
+      "gym",
+      "meals_included",
+      "hot_water",
+      "parking"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg76_img1/800/600",
+      "https://picsum.photos/seed/pg76_img2/800/600",
+      "https://picsum.photos/seed/pg76_img3/800/600"
+    ]
+  },
+  {
+    "id": 77,
+    "title": "Kothrud Residency",
+    "city": "Pune",
+    "area": "Kothrud",
+    "distance": "1.3 km from city center",
+    "price": 9000,
+    "sharing": "Single",
+    "meals": "Pure Veg",
+    "rating": 4.6,
+    "reviews": 124,
+    "verified": false,
+    "amenities": [
+      "parking",
+      "housekeeping",
+      "gym",
+      "study_room",
+      "hot_water"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg77_img1/800/600",
+      "https://picsum.photos/seed/pg77_img2/800/600",
+      "https://picsum.photos/seed/pg77_img3/800/600"
+    ]
+  },
+  {
+    "id": 78,
+    "title": "Kothrud Homes",
+    "city": "Pune",
+    "area": "Kothrud",
+    "distance": "1.4 km from city center",
+    "price": 9000,
+    "sharing": "Double",
+    "meals": "Self Cooking",
+    "rating": 4.4,
+    "reviews": 103,
+    "verified": true,
+    "amenities": [
+      "study_room",
+      "ac",
+      "wifi",
+      "meals_included",
+      "gym"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg78_img1/800/600",
+      "https://picsum.photos/seed/pg78_img2/800/600",
+      "https://picsum.photos/seed/pg78_img3/800/600"
+    ]
+  },
+  {
+    "id": 79,
+    "title": "Velachery Heights",
+    "city": "Chennai",
+    "area": "Velachery",
+    "distance": "1.8 km from city center",
+    "price": 10500,
+    "sharing": "Triple",
+    "meals": "Self Cooking",
+    "rating": 4.6,
+    "reviews": 98,
+    "verified": true,
+    "amenities": [
+      "wifi",
+      "parking",
+      "power_backup",
+      "laundry",
+      "housekeeping"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg79_img1/800/600",
+      "https://picsum.photos/seed/pg79_img2/800/600",
+      "https://picsum.photos/seed/pg79_img3/800/600"
+    ]
+  },
+  {
+    "id": 80,
+    "title": "Gachibowli Hostel",
+    "city": "Hyderabad",
+    "area": "Gachibowli",
+    "distance": "2.6 km from city center",
+    "price": 5000,
+    "sharing": "Triple",
+    "meals": "Veg + Non-Veg",
+    "rating": 3.6,
+    "reviews": 164,
+    "verified": false,
+    "amenities": [
+      "ac",
+      "cctv",
+      "parking",
+      "hot_water",
+      "study_room"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg80_img1/800/600",
+      "https://picsum.photos/seed/pg80_img2/800/600",
+      "https://picsum.photos/seed/pg80_img3/800/600"
+    ]
+  },
+  {
+    "id": 81,
+    "title": "Garia Nest",
+    "city": "Kolkata",
+    "area": "Garia",
+    "distance": "0.8 km from city center",
+    "price": 9000,
+    "sharing": "Single",
+    "meals": "Veg + Non-Veg",
+    "rating": 4.3,
+    "reviews": 167,
+    "verified": false,
+    "amenities": [
+      "power_backup",
+      "hot_water",
+      "wifi",
+      "cctv",
+      "laundry"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg81_img1/800/600",
+      "https://picsum.photos/seed/pg81_img2/800/600",
+      "https://picsum.photos/seed/pg81_img3/800/600"
+    ]
+  },
+  {
+    "id": 82,
+    "title": "Hinjewadi Residency",
+    "city": "Pune",
+    "area": "Hinjewadi",
+    "distance": "2.5 km from city center",
+    "price": 9000,
+    "sharing": "Single",
+    "meals": "Veg + Non-Veg",
+    "rating": 3.9,
+    "reviews": 45,
+    "verified": true,
+    "amenities": [
+      "study_room",
+      "meals_included",
+      "hot_water",
+      "cctv",
+      "parking",
+      "power_backup"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg82_img1/800/600",
+      "https://picsum.photos/seed/pg82_img2/800/600",
+      "https://picsum.photos/seed/pg82_img3/800/600"
+    ]
+  },
+  {
+    "id": 83,
+    "title": "Kothrud Nest",
+    "city": "Pune",
+    "area": "Kothrud",
+    "distance": "2.2 km from city center",
+    "price": 12500,
+    "sharing": "Single",
+    "meals": "Self Cooking",
+    "rating": 4.2,
+    "reviews": 83,
+    "verified": false,
+    "amenities": [
+      "meals_included",
+      "hot_water",
+      "parking",
+      "ac",
+      "gym",
+      "power_backup"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg83_img1/800/600",
+      "https://picsum.photos/seed/pg83_img2/800/600",
+      "https://picsum.photos/seed/pg83_img3/800/600"
+    ]
+  },
+  {
+    "id": 84,
+    "title": "Andheri Stay",
+    "city": "Mumbai",
+    "area": "Andheri",
+    "distance": "3.1 km from city center",
+    "price": 6500,
+    "sharing": "Triple",
+    "meals": "Pure Veg",
+    "rating": 3.7,
+    "reviews": 42,
+    "verified": false,
+    "amenities": [
+      "ac",
+      "housekeeping",
+      "cctv",
+      "parking",
+      "laundry",
+      "meals_included",
+      "wifi"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg84_img1/800/600",
+      "https://picsum.photos/seed/pg84_img2/800/600",
+      "https://picsum.photos/seed/pg84_img3/800/600"
+    ]
+  },
+  {
+    "id": 85,
+    "title": "Anna Nagar Heights",
+    "city": "Chennai",
+    "area": "Anna Nagar",
+    "distance": "2.1 km from city center",
+    "price": 6500,
+    "sharing": "Double",
+    "meals": "Pure Veg",
+    "rating": 4.1,
+    "reviews": 167,
+    "verified": true,
+    "amenities": [
+      "cctv",
+      "wifi",
+      "housekeeping",
+      "study_room",
+      "laundry",
+      "ac",
+      "meals_included",
+      "parking"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg85_img1/800/600",
+      "https://picsum.photos/seed/pg85_img2/800/600",
+      "https://picsum.photos/seed/pg85_img3/800/600"
+    ]
+  },
+  {
+    "id": 86,
+    "title": "Hitech City Homes",
+    "city": "Hyderabad",
+    "area": "Hitech City",
+    "distance": "2.1 km from city center",
+    "price": 15000,
+    "sharing": "Single",
+    "meals": "Pure Veg",
+    "rating": 3.6,
+    "reviews": 163,
+    "verified": false,
+    "amenities": [
+      "meals_included",
+      "cctv",
+      "housekeeping",
+      "gym",
+      "ac",
+      "parking"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg86_img1/800/600",
+      "https://picsum.photos/seed/pg86_img2/800/600",
+      "https://picsum.photos/seed/pg86_img3/800/600"
+    ]
+  },
+  {
+    "id": 87,
+    "title": "Howrah Hostel",
+    "city": "Kolkata",
+    "area": "Howrah",
+    "distance": "1.2 km from city center",
+    "price": 6500,
+    "sharing": "Single",
+    "meals": "Veg + Non-Veg",
+    "rating": 4.6,
+    "reviews": 31,
+    "verified": true,
+    "amenities": [
+      "housekeeping",
+      "parking",
+      "wifi",
+      "cctv",
+      "power_backup",
+      "study_room"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg87_img1/800/600",
+      "https://picsum.photos/seed/pg87_img2/800/600",
+      "https://picsum.photos/seed/pg87_img3/800/600"
+    ]
+  },
+  {
+    "id": 88,
+    "title": "Madhapur Nest",
+    "city": "Hyderabad",
+    "area": "Madhapur",
+    "distance": "1.5 km from city center",
+    "price": 10500,
+    "sharing": "Double",
+    "meals": "Veg + Non-Veg",
+    "rating": 4.3,
+    "reviews": 191,
+    "verified": true,
+    "amenities": [
+      "cctv",
+      "gym",
+      "ac",
+      "housekeeping",
+      "wifi",
+      "laundry",
+      "parking"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg88_img1/800/600",
+      "https://picsum.photos/seed/pg88_img2/800/600",
+      "https://picsum.photos/seed/pg88_img3/800/600"
+    ]
+  },
+  {
+    "id": 89,
+    "title": "Powai Nest",
+    "city": "Mumbai",
+    "area": "Powai",
+    "distance": "1.0 km from city center",
+    "price": 15000,
+    "sharing": "Single",
+    "meals": "Veg + Non-Veg",
+    "rating": 4.4,
+    "reviews": 94,
+    "verified": false,
+    "amenities": [
+      "hot_water",
+      "study_room",
+      "power_backup",
+      "housekeeping",
+      "meals_included"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg89_img1/800/600",
+      "https://picsum.photos/seed/pg89_img2/800/600",
+      "https://picsum.photos/seed/pg89_img3/800/600"
+    ]
+  },
+  {
+    "id": 90,
+    "title": "Adyar Nest",
+    "city": "Chennai",
+    "area": "Adyar",
+    "distance": "2.6 km from city center",
+    "price": 5000,
+    "sharing": "Double",
+    "meals": "Self Cooking",
+    "rating": 4.5,
+    "reviews": 125,
+    "verified": false,
+    "amenities": [
+      "gym",
+      "power_backup",
+      "hot_water",
+      "housekeeping",
+      "meals_included"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg90_img1/800/600",
+      "https://picsum.photos/seed/pg90_img2/800/600",
+      "https://picsum.photos/seed/pg90_img3/800/600"
+    ]
+  },
+  {
+    "id": 91,
+    "title": "Howrah Hostel",
+    "city": "Kolkata",
+    "area": "Howrah",
+    "distance": "2.0 km from city center",
+    "price": 10500,
+    "sharing": "Single",
+    "meals": "Veg + Non-Veg",
+    "rating": 4.6,
+    "reviews": 49,
+    "verified": false,
+    "amenities": [
+      "ac",
+      "power_backup",
+      "hot_water",
+      "wifi",
+      "parking"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg91_img1/800/600",
+      "https://picsum.photos/seed/pg91_img2/800/600",
+      "https://picsum.photos/seed/pg91_img3/800/600"
+    ]
+  },
+  {
+    "id": 92,
+    "title": "Dwarka Coliving",
+    "city": "Delhi",
+    "area": "Dwarka",
+    "distance": "1.5 km from city center",
+    "price": 15000,
+    "sharing": "Single",
+    "meals": "Veg + Non-Veg",
+    "rating": 3.8,
+    "reviews": 180,
+    "verified": false,
+    "amenities": [
+      "laundry",
+      "parking",
+      "meals_included",
+      "ac",
+      "study_room",
+      "cctv"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg92_img1/800/600",
+      "https://picsum.photos/seed/pg92_img2/800/600",
+      "https://picsum.photos/seed/pg92_img3/800/600"
+    ]
+  },
+  {
+    "id": 93,
+    "title": "Saket Coliving",
+    "city": "Delhi",
+    "area": "Saket",
+    "distance": "0.6 km from city center",
+    "price": 9000,
+    "sharing": "Triple",
+    "meals": "Veg + Non-Veg",
+    "rating": 4.9,
+    "reviews": 19,
+    "verified": false,
+    "amenities": [
+      "housekeeping",
+      "study_room",
+      "parking",
+      "cctv",
+      "hot_water"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg93_img1/800/600",
+      "https://picsum.photos/seed/pg93_img2/800/600",
+      "https://picsum.photos/seed/pg93_img3/800/600"
+    ]
+  },
+  {
+    "id": 94,
+    "title": "Indiranagar Residency",
+    "city": "Bengaluru",
+    "area": "Indiranagar",
+    "distance": "0.7 km from city center",
+    "price": 7500,
+    "sharing": "Triple",
+    "meals": "Veg + Non-Veg",
+    "rating": 4.3,
+    "reviews": 69,
+    "verified": false,
+    "amenities": [
+      "ac",
+      "wifi",
+      "gym",
+      "meals_included",
+      "laundry",
+      "cctv"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg94_img1/800/600",
+      "https://picsum.photos/seed/pg94_img2/800/600",
+      "https://picsum.photos/seed/pg94_img3/800/600"
+    ]
+  },
+  {
+    "id": 95,
+    "title": "Hitech City Stay",
+    "city": "Hyderabad",
+    "area": "Hitech City",
+    "distance": "3.0 km from city center",
+    "price": 10500,
+    "sharing": "Single",
+    "meals": "Veg + Non-Veg",
+    "rating": 4.2,
+    "reviews": 41,
+    "verified": true,
+    "amenities": [
+      "parking",
+      "housekeeping",
+      "ac",
+      "laundry",
+      "power_backup",
+      "cctv",
+      "gym"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg95_img1/800/600",
+      "https://picsum.photos/seed/pg95_img2/800/600",
+      "https://picsum.photos/seed/pg95_img3/800/600"
+    ]
+  },
+  {
+    "id": 96,
+    "title": "Andheri Heights",
+    "city": "Mumbai",
+    "area": "Andheri",
+    "distance": "2.9 km from city center",
+    "price": 15000,
+    "sharing": "Single",
+    "meals": "Veg + Non-Veg",
+    "rating": 4.9,
+    "reviews": 57,
+    "verified": false,
+    "amenities": [
+      "cctv",
+      "ac",
+      "housekeeping",
+      "wifi",
+      "laundry",
+      "meals_included",
+      "power_backup",
+      "parking"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg96_img1/800/600",
+      "https://picsum.photos/seed/pg96_img2/800/600",
+      "https://picsum.photos/seed/pg96_img3/800/600"
+    ]
+  },
+  {
+    "id": 97,
+    "title": "Saket Coliving",
+    "city": "Delhi",
+    "area": "Saket",
+    "distance": "3.1 km from city center",
+    "price": 7500,
+    "sharing": "Triple",
+    "meals": "Pure Veg",
+    "rating": 4.6,
+    "reviews": 173,
+    "verified": false,
+    "amenities": [
+      "study_room",
+      "laundry",
+      "hot_water",
+      "power_backup",
+      "housekeeping",
+      "parking",
+      "cctv",
+      "gym"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg97_img1/800/600",
+      "https://picsum.photos/seed/pg97_img2/800/600",
+      "https://picsum.photos/seed/pg97_img3/800/600"
+    ]
+  },
+  {
+    "id": 98,
+    "title": "Koramangala Heights",
+    "city": "Bengaluru",
+    "area": "Koramangala",
+    "distance": "3.3 km from city center",
+    "price": 15000,
+    "sharing": "Double",
+    "meals": "Veg + Non-Veg",
+    "rating": 3.7,
+    "reviews": 162,
+    "verified": true,
+    "amenities": [
+      "laundry",
+      "wifi",
+      "housekeeping",
+      "cctv",
+      "parking"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg98_img1/800/600",
+      "https://picsum.photos/seed/pg98_img2/800/600",
+      "https://picsum.photos/seed/pg98_img3/800/600"
+    ]
+  },
+  {
+    "id": 99,
+    "title": "Dwarka Stay",
+    "city": "Delhi",
+    "area": "Dwarka",
+    "distance": "3.3 km from city center",
+    "price": 15000,
+    "sharing": "Single",
+    "meals": "Pure Veg",
+    "rating": 3.8,
+    "reviews": 174,
+    "verified": true,
+    "amenities": [
+      "study_room",
+      "gym",
+      "power_backup",
+      "housekeeping",
+      "parking",
+      "wifi"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg99_img1/800/600",
+      "https://picsum.photos/seed/pg99_img2/800/600",
+      "https://picsum.photos/seed/pg99_img3/800/600"
+    ]
+  },
+  {
+    "id": 100,
+    "title": "Thane Heights",
+    "city": "Mumbai",
+    "area": "Thane",
+    "distance": "2.3 km from city center",
+    "price": 15000,
+    "sharing": "Single",
+    "meals": "Self Cooking",
+    "rating": 3.9,
+    "reviews": 43,
+    "verified": true,
+    "amenities": [
+      "parking",
+      "ac",
+      "cctv",
+      "housekeeping",
+      "wifi"
+    ],
+    "images": [
+      "https://picsum.photos/seed/pg100_img1/800/600",
+      "https://picsum.photos/seed/pg100_img2/800/600",
+      "https://picsum.photos/seed/pg100_img3/800/600"
+    ]
+  }
+]

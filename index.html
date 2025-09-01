@@ -1,0 +1,2047 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PadhoGhar - Find Your Perfect PG Home</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" 
+          crossorigin=""/>
+    
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css">
+
+    <style>
+        body {
+            background: #f8fafc;
+        }
+
+        .navbar {
+    background: rgba(255, 255, 255, 0.2) !important; /* semi-transparent white */
+    backdrop-filter: blur(8px); /* smooth glass effect */
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        .hero-section {
+            background: url('https://padho-ghar-dhoondo.lovable.app/assets/hero-image-Dk52FpsQ.jpg') center center/cover no-repeat;
+            min-height: 70vh;
+            position: relative;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-overlay {
+            background: rgba(0, 0, 0, 0.55);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding-top: 60px;
+            padding-bottom: 20px;
+        }
+
+        .pg-highlight {
+            color: #1976d2;
+        }
+
+        .search-bar {
+            background: #fff;
+            border-radius: 15px;
+            padding: 10px 20px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+            margin: 30px auto 30px;
+            max-width: 750px;
+            box-shadow: 0 4px 12px rgba(30, 30, 30, 0.08);
+        }
+
+        .search-bar .input-group {
+            width: 250px;
+        }
+
+        .feature-list {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            margin-top: 25px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .feature-item {
+            background: rgba(30, 30, 30, 0.55);
+            color: #fff;
+            border-radius: 14px;
+            padding: 18px 22px;
+            min-width: 150px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+
+        .feature-item:hover {
+            background: #1976d2;
+            color: #fff;
+            box-shadow: 0 4px 16px rgba(25, 118, 210, 0.18);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 7px;
+        }
+
+        .filters-sticky-bar {
+            position: sticky;
+            top: 0;
+            z-index: 1030;
+            border-bottom: 1px solid #e5e7eb;
+            background: #fff;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        }
+
+        @media (max-width: 960px) {
+            .filters-sticky-bar .container {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .feature-list {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .search-bar {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+
+        .popular-cities-section {
+            background: #f8fafc;
+            padding: 50px 0 30px;
+            text-align: center;
+        }
+
+        .popular-cities-section h2 {
+            font-weight: bold;
+            margin-bottom: 13px;
+        }
+
+        .popular-city-btn {
+            background: #fff;
+            border-radius: 25px;
+            border: 1px solid #e5e7eb;
+            padding: 9px 28px;
+            font-size: 1rem;
+            margin: 7px 6px;
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+            cursor: pointer;
+            transition: border-color .2s;
+        }
+
+        .popular-city-btn:hover {
+            border-color: #1976d2;
+            background: #e3f2fd;
+        }
+
+        /* Map View Toggle */
+        .view-toggle {
+            display: flex;
+            justify-content: flex-end;
+            margin: 0 2.5rem 15px;
+        }
+
+        .view-toggle-btn {
+            background: #fff;
+            border: 1px solid #dee2e6;
+            padding: 8px 16px;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .view-toggle-btn:first-child {
+            border-radius: 6px 0 0 6px;
+            border-right: none;
+        }
+
+        .view-toggle-btn:last-child {
+            border-radius: 0 6px 6px 0;
+        }
+
+        .view-toggle-btn.active {
+            background: #1976d2;
+            color: #fff;
+            border-color: #1976d2;
+        }
+
+        /* Map Container */
+        #map-container {
+            height: 500px;
+            margin: 0 2.5rem 30px;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(30, 30, 30, 0.07);
+            display: none;
+        }
+
+        #map {
+            height: 100%;
+            width: 100%;
+        }
+
+        /* Custom Marker Popup */
+        .map-popup {
+            text-align: left;
+            max-width: 250px;
+        }
+
+        .map-popup img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .map-popup h5 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .map-popup p {
+            margin-bottom: 5px;
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+
+        .map-popup .price {
+            color: #1976d2;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .map-popup .btn {
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        /* All PG Cards */
+        .pg-listing-section {
+            background: #fff;
+            box-shadow: 0 2px 14px rgba(0, 0, 0, 0.08);
+            border-radius: 14px;
+            padding: 40px 0 55px 0;
+            margin: 50px auto 24px auto;
+            max-width: 1300px;
+        }
+
+        .pg-header-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0 2.5rem;
+            margin-bottom: 12px;
+        }
+
+        .pg-header-row h2 {
+            font-weight: bold;
+            margin-bottom: 3px;
+            color: #1e293b;
+        }
+
+        .pg-cards-row {
+            display: flex;
+            gap: 26px;
+            justify-content: flex-start;
+            margin: 0 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .pg-card {
+            background: #fff;
+            box-shadow: 0 2px 12px rgba(30, 30, 30, 0.07);
+            border-radius: 16px;
+            width: 370px;
+            min-width: 310px;
+            flex: 1 0 310px;
+            margin-bottom: 18px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .pg-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(30, 30, 30, 0.15);
+        }
+
+        .pg-card.highlighted {
+            border: 2px solid #1976d2;
+            box-shadow: 0 8px 20px rgba(25, 118, 210, 0.2);
+        }
+
+        .pg-card-img {
+            position: relative;
+            height: 210px;
+            overflow: hidden;
+            border-top-left-radius: 16px;
+            border-top-right-radius: 16px;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pg-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-top-left-radius: 16px;
+            border-top-right-radius: 16px;
+        }
+
+        .pg-card-label {
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            background: #28c76f;
+            color: #fff;
+            font-size: 1rem;
+            border-radius: 15px;
+            padding: 2px 14px;
+            font-weight: 500;
+        }
+
+        .pg-card-distance {
+            position: absolute;
+            top: 48px;
+            left: 15px;
+            background: #fff;
+            color: #555;
+            font-size: .93rem;
+            border-radius: 11px;
+            padding: 2px 10px;
+            font-weight: 500;
+            box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        .pg-card-rent {
+            position: absolute;
+            bottom: 20px;
+            right: 15px;
+            background: #1976d2;
+            color: #fff;
+            font-size: 1.1rem;
+            border-radius: 16px;
+            padding: 4px 24px;
+            font-weight: 600;
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+        }
+
+        .pg-card-fav {
+            position: absolute;
+            top: 15px;
+            right: 18px;
+            font-size: 1.3rem;
+            color: #aaa;
+            background: #fff;
+            border-radius: 50%;
+            padding: 3px 8px 5px 8px;
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.07);
+            cursor: pointer;
+            transition: color .2s;
+        }
+
+        .pg-card-fav:hover {
+            color: #1976d2;
+        }
+
+        .pg-card-body {
+            padding: 18px 22px 0 22px;
+        }
+
+        .pg-card-title {
+            font-size: 1.17rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+        }
+
+        .pg-card-location {
+            color: #6b7280;
+            font-size: .98rem;
+            margin-bottom: 7px;
+        }
+
+        .pg-card-rating {
+            color: #1976d2;
+            font-weight: 500;
+            font-size: 1.07rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 7px;
+        }
+
+        .pg-card-rating .bi-star-fill {
+            color: #fabb05;
+        }
+
+        .pg-badge {
+            background: #f3f4f6;
+            border-radius: 13px;
+            padding: 3px 13px;
+            margin: 0 4px 3px 0;
+            font-size: .95rem;
+            font-weight: 500;
+            display: inline-block;
+            color: #222;
+        }
+
+        .pg-card-body small {
+            display: block;
+        }
+
+        .pg-card-icon-row {
+            display: flex;
+            gap: 13px;
+            margin-top: 7px;
+            margin-bottom: 6px;
+            color: #636e72;
+            font-size: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .pg-card-footer {
+            border-top: 1px solid #eee;
+            margin-top: 20px;
+            padding: 14px 22px 11px 22px;
+            display: flex;
+            gap: 10px;
+            justify-content: space-between;
+            background: #fff;
+            border-bottom-right-radius: 16px;
+            border-bottom-left-radius: 16px;
+        }
+
+        @media (max-width: 1160px) {
+            .pg-cards-row {
+                flex-direction: column;
+                gap: 18px;
+            }
+
+            .pg-card {
+                width: 100%;
+                min-width: 0;
+            }
+
+            .pg-listing-section {
+                margin: 19px auto 15px auto;
+            }
+
+            .pg-header-row {
+                margin: 0 1rem 12px 1rem;
+            }
+
+            .view-toggle {
+                margin: 0 1rem 15px;
+            }
+
+            #map-container {
+                margin: 0 1rem 30px;
+            }
+        }
+
+        /* Why Choose PadhoGhar Section */
+        .why-choose-section {
+            background: #fff;
+            padding: 70px 0;
+            text-align: center;
+        }
+
+        .why-choose-section h2 {
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #1e293b;
+        }
+
+        .why-choose-section p.subheading {
+            color: #64748b;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            text-align: center;
+            width: 220px;
+            padding: 20px;
+            border-radius: 12px;
+            background: #f8fafc;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #1976d2;
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+
+        .stat-description {
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .stats-container {
+                gap: 30px;
+            }
+
+            .stat-item {
+                width: 45%;
+                min-width: 150px;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .stats-container {
+                gap: 20px;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .stat-item {
+                width: 100%;
+                max-width: 280px;
+            }
+        }
+
+        /* Footer Styles */
+        .footer-section {
+            background: linear-gradient(to right, #1a237e, #283593) !important;
+        }
+
+        .footer-section a:hover {
+            color: #64b5f6 !important;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section h5 {
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-section h5:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: #1976d2;
+        }
+
+        /* User profile tooltip styles */
+        #user-profile-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .user-name-tooltip {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+            z-index: 1000;
+            pointer-events: none;
+        }
+
+        .user-name-tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 5px;
+            border-style: solid;
+            border-color: #333 transparent transparent transparent;
+        }
+
+        #user-profile-container:hover .user-name-tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Adjust button group for better appearance */
+        .btn-group .btn {
+            border-radius: 0.375rem !important;
+        }
+
+        .btn-group .btn:first-child {
+            border-top-right-radius: 0 !important;
+            border-bottom-right-radius: 0 !important;
+        }
+
+        .btn-group .dropdown-toggle {
+            border-top-left-radius: 0 !important;
+            border-bottom-left-radius: 0 !important;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
+
+        /* Responsive adjustments for navbar */
+        @media (max-width: 992px) {
+            .navbar-nav.ms-auto {
+                flex-direction: row;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .btn-group {
+                margin-left: 10px;
+            }
+        }
+
+        /* Toast notification */
+        .toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 9999;
+        }
+
+        /* Loading spinner */
+        .spinner-border {
+            width: 3rem;
+            height: 3rem;
+        }
+
+        /* No results message */
+        .no-results {
+            text-align: center;
+            padding: 40px 0;
+            color: #6c757d;
+        }
+
+        /* Filter controls */
+        .filter-controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding: 0 2.5rem;
+        }
+
+        .filter-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .filter-group label {
+            font-weight: 500;
+            margin-bottom: 0;
+        }
+        
+        /* Saved PGs badge */
+        #saved-pgs-link {
+            position: relative;
+        }
+        
+        #saved-count-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: #dc3545;
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+/* (Previous CSS remains unchanged) */
+        
+        /* Booking Modal Styles */
+        .booking-modal .modal-content {
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        
+        .booking-modal .modal-header {
+            background: linear-gradient(to right, #1976d2, #2196f3);
+            color: white;
+            border-bottom: none;
+        }
+        
+        .booking-modal .modal-body {
+            padding: 2rem;
+        }
+        
+        .booking-modal .form-label {
+            font-weight: 500;
+            color: #37474f;
+        }
+        
+        .booking-modal .form-control:focus {
+            border-color: #1976d2;
+            box-shadow: 0 0 0 0.25rem rgba(25, 118, 210, 0.25);
+        }
+        
+        .booking-modal .pg-info-card {
+            background-color: #f8fafc;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .booking-modal .pg-info-title {
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .booking-modal .pg-info-details {
+            color: #64748b;
+        }
+        
+        .booking-modal .btn-primary {
+            background: linear-gradient(to right, #1976d2, #2196f3);
+            border: none;
+            padding: 0.75rem 2rem;
+            font-weight: 600;
+            border-radius: 10px;
+        }
+        
+        .booking-modal .btn-primary:hover {
+            background: linear-gradient(to right, #1565c0, #1976d2);
+        }
+        
+        .booking-modal .btn-outline-secondary {
+            border-radius: 10px;
+            padding: 0.75rem 2rem;
+        }
+
+
+        
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-geo-alt-fill text-primary"></i> PadhoGhar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#find-pg">Find PGs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#how-it-works">How it Works</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link position-relative" href="#" id="saved-pgs-link">
+                            <i class="bi bi-heart"></i> Saved
+                            <span class="position-absolute top-0 start-100 translate-middle-x  badge rounded-pill bg-danger" id="saved-count-badge">0</span>
+                        </a>
+                    </li>
+                    <!-- Updated user profile section -->
+                    <li class="nav-item">
+                        <div class="nav-link position-relative" id="user-profile-container">
+                            <div class="btn-group ">
+                                <a href="/auth.html" class="btn btn-outline-primary position-relative" id="auth-button">
+                                    <i class="bi bi-person" id="auth-icon"></i>
+                                    <span class="user-name-tooltip" id="user-name-tooltip">user@example.com</span>
+                                </a>
+                                <button type="button"
+                                    class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="visually-hidden">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end ">
+                                    <li><a class="dropdown-item" href="#"><i class="bi bi-person me-2"></i>Profile</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#" id="saved-pgs-dropdown"><i class="bi bi-heart me-2"></i>Saved PGs</a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#" id="logout-button"><i
+                                                class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section position-relative">
+        <div class="hero-overlay"></div>
+        <div class="hero-content container">
+            <h1 class="display-3 fw-bold">
+                Find Your Perfect <span class="pg-highlight" id="element">PG Home</span>
+            </h1>
+            <p class="lead w-75 mx-auto mb-4">
+                Verified, affordable PG accommodations for students and professionals. No
+                brokers, no hassle, just your perfect home away from home.
+            </p>
+            <!-- Search Bar -->
+            <form class="search-bar shadow" autocomplete="off" id="search-form">
+                <div class="input-group">
+                    <span class="input-group-text bg-white"><i class="bi bi-geo-alt"></i></span>
+                    <input type="text" class="form-control border-0" placeholder="City, College, or Area"
+                        id="location-search" />
+                </div>
+                <div class="input-group">
+                    <input type="text" class="form-control border-0" placeholder="Budget Range (₹5000 - ₹15000)"
+                        id="budget-filter" />
+                </div>
+                <button type="submit" class="btn btn-primary px-4">Search PGs</button>
+            </form>
+            <div class="feature-list mt-2">
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="bi bi-shield-check"></i></div>
+                    <div class="fw-bold">Verified</div><small>Only trusted PGs</small>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="bi bi-people"></i></div>
+                    <div class="fw-bold">Community</div><small>Find roommates</small>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="bi bi-lightning-charge"></i></div>
+                    <div class="fw-bold">Instant Book</div><small>Quick booking</small>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="bi bi-geo-alt"></i></div>
+                    <div class="fw-bold">Best Locations</div><small>Near colleges</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Filters Bar -->
+    <div class="filters-sticky-bar" id="stickyFilters">
+        <div class="container py-2 d-flex align-items-center flex-wrap gap-3"
+            style="padding-left: 1rem; padding-right: 1rem">
+            <select class="form-select" style="min-width:150px;max-width:170px;" id="city-filter">
+                <option value="" selected>All Cities</option>
+                <option value="Bengaluru">Bangalore</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Kolkata">Kolkata</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Pune">Pune</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Chennai">Chennai</option>
+            </select>
+            <select class="form-select" style="min-width:150px;max-width:170px;" id="sharing-filter">
+                <option value="" selected>All Sharing Types</option>
+                <option value="Single">Single</option>
+                <option value="Double">Double</option>
+                <option value="Triple">Triple</option>
+            </select>
+            <select class="form-select" style="min-width:150px;max-width:170px;" id="meal-filter">
+                <option value="" selected>All Meal Options</option>
+                <option value="Pure Veg">Pure Veg</option>
+                <option value="Veg + Non-Veg">Veg + Non-Veg</option>
+                <option value="Self Cooking">Self Cooking</option>
+            </select>
+            <select class="form-select" style="min-width:150px;max-width:170px;" id="verified-filter">
+                <option value="" selected>All PGs</option>
+                <option value="true">Verified Only</option>
+            </select>
+            <div class="d-flex align-items-center">
+                <span class="fw-semibold me-2">Price Range:</span>
+                <input type="range" class="form-range" min="4500" max="15500" step="1000" id="stickyPriceRange"
+                    style="width: 160px" />
+                <span id="stickyPriceValue" class="ms-2">₹4,500 - ₹15,500</span>
+            </div>
+            <button class="btn btn-outline-dark ms-auto" id="reset-filters">
+                <i class="bi bi-arrow-clockwise"></i> Reset Filters
+            </button>
+        </div>
+    </div>
+
+    <!-- Popular Cities Section -->
+    <div class="popular-cities-section">
+        <h2>Popular Cities</h2>
+        <div class="mb-1" style="color: #6b7280">
+            Find the best PG accommodations in India's top educational and IT hubs
+        </div>
+        <div>
+            <button class="popular-city-btn city-filter-btn" data-city="Bengaluru"><i class="bi bi-geo-alt"></i>
+                Bangalore</button>
+            <button class="popular-city-btn city-filter-btn" data-city="Delhi"><i class="bi bi-geo-alt"></i>
+                Delhi</button>
+            <button class="popular-city-btn city-filter-btn" data-city="Kolkata"><i class="bi bi-geo-alt"></i>
+                Kolkata</button>
+            <button class="popular-city-btn city-filter-btn" data-city="Mumbai"><i class="bi bi-geo-alt"></i>
+                Mumbai</button>
+            <button class="popular-city-btn city-filter-btn" data-city="Pune"><i class="bi bi-geo-alt"></i>
+                Pune</button>
+            <button class="popular-city-btn city-filter-btn" data-city="Hyderabad"><i class="bi bi-geo-alt"></i>
+                Hyderabad</button>
+        </div>
+    </div>
+
+    <!-- All PGs Cards Section -->
+    <div class="pg-listing-section" id="find-pg">
+        <div class="pg-header-row">
+            <div>
+                <h2>Available PG Accommodations</h2>
+                <div style="color:#6b7280; font-size:1.05rem;" id="results-count">Loading PGs...</div>
+            </div>
+            <div class="filter-controls">
+                <div class="filter-group">
+                    <label for="sort-by">Sort by:</label>
+                    <select class="form-select form-select-sm" id="sort-by" style="width: auto;">
+                        <option value="price-asc">Price: Low to High</option>
+                        <option value="price-desc">Price: High to Low</option>
+                        <option value="rating-desc">Rating: High to Low</option>
+                        <option value="reviews-desc">Most Reviews</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- View Toggle -->
+        <div class="view-toggle">
+            <button class="view-toggle-btn active" id="list-view-btn">
+                <i class="bi bi-list-ul"></i> List View
+            </button>
+            <button class="view-toggle-btn" id="map-view-btn">
+                <i class="bi bi-map"></i> Map View
+            </button>
+        </div>
+
+        <!-- Map Container -->
+        <div id="map-container">
+            <div id="map"></div>
+        </div>
+
+        <div class="pg-cards-row" id="pg-cards-container">
+            <!-- Loading spinner -->
+            <div class="w-100 text-center py-5">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <p class="mt-3">Loading PG listings...</p>
+            </div>
+        </div>
+
+        <!-- Load more button -->
+        <div class="text-center mt-4" id="load-more-container" style="display: none;">
+            <button class="btn btn-primary" id="load-more-btn">Load More PGs</button>
+        </div>
+    </div>
+
+    <!-- Why Choose PadhoGhar Section -->
+    <div class="why-choose-section" id="how-it-works">
+        <div class="container">
+            <h2>Why Choose PadhoGhar?</h2>
+            <p class="subheading">India's most trusted platform for student accommodations</p>
+
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number">50,000+</div>
+                    <div class="stat-label">Happy Students</div>
+                    <div class="stat-description">Students who found their perfect home through us</div>
+                </div>
+
+                <div class="stat-item">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">Verified PGs</div>
+                    <div class="stat-description">Thoroughly verified properties with quality checks</div>
+                </div>
+
+                <div class="stat-item">
+                    <div class="stat-number">₹0</div>
+                    <div class="stat-label">Brokerage Fee</div>
+                    <div class="stat-description">Zero brokerage, direct owner connections</div>
+                </div>
+
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Support</div>
+                    <div class="stat-description">Round-the-clock customer support for all queries</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <!-- Booking Modal -->
+    <div class="modal fade booking-modal" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="bookingModalLabel">Book PG Accommodation</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="pg-info-card" id="modal-pg-info">
+                        <!-- PG information will be inserted here -->
+                    </div>
+                    
+                    <form id="booking-form">
+                        <div class="mb-3">
+                            <label for="booking-name" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="booking-name" required>
+                            <div class="invalid-feedback">Please enter your name</div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="booking-email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="booking-email" required>
+                            <div class="invalid-feedback">Please enter a valid email address</div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="booking-phone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="booking-phone" required>
+                            <div class="invalid-feedback">Please enter a valid phone number</div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="booking-message" class="form-label">Message (Optional)</label>
+                            <textarea class="form-control" id="booking-message" rows="3" placeholder="Any specific requirements or questions..."></textarea>
+                        </div>
+                        
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <button type="button" class="btn btn-outline-secondary me-md-2" data-bs-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-primary" id="booking-submit">
+                                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="display: none;"></span>
+                                Submit Enquiry
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer-section bg-dark text-light pt-5 pb-4" id="contact">
+        <div class="container">
+            <div class="row">
+                <!-- Company Info -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5 class="fw-bold mb-3"><i class="bi bi-geo-alt-fill text-primary"></i> PadhoGhar</h5>
+                    <p class="mb-3">India's most trusted platform for student accommodations. Find verified, affordable
+                        PG accommodations without any brokerage fees.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-light fs-5"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="textlight fs-5"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-light fs-5"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-light fs-5"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="fw-bold mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#find-pg" class="text-light text-decoration-none">Find PGs</a></li>
+                        <li class="mb-2"><a href="#how-it-works" class="text-light text-decoration-none">How it
+                                Works</a></li>
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none">About Us</a></li>
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none">Testimonials</a></li>
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Cities -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="fw-bold mb-3">Popular Cities</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none">PG in Bangalore</a></li>
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none">PG in Delhi</a></li>
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none">PG in Mumbai</a></li>
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none">PG in Pune</a></li>
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none">PG in Hyderabad</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact & Support -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="fw-bold mb-3">Contact & Support</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="bi bi-headset me-2 text-primary"></i> <a href="tel:+18001234567"
+                                class="text-light text-decoration-none">1800-123-4567</a></li>
+                        <li class="mb-2"><i class="bi bi-envelope me-2 text-primary"></i> <a
+                                href="mailto:support@padhoghar.com"
+                                class="text-light text-decoration-none">support@padhoghar.com</a></li>
+                        <li class="mb-2"><i class="bi bi-download me-2 text-primary"></i> <a href="#"
+                                class="text-light text-decoration-none">Download App</a></li>
+                    </ul>
+                    <div class="mt-3">
+                        <img src="https://www.your-space.in/_next/static/media/appstore.8f786373.svg" alt="App Store"
+                            class="img-fluid mb-2">
+                        <img src="https://www.your-space.in/_next/static/media/googleplay.48e6ecff.svg" alt="Google Play"
+                            class="img-fluid">
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-4 bg-light">
+
+            <!-- Bottom Footer -->
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2025 PadhoGhar. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-light text-decoration-none me-3">Privacy Policy</a>
+                    <a href="#" class="text-light text-decoration-none me-3">Terms of Service</a>
+                    <a href="#" class="text-light text-decoration-none">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast align-items-center text-white bg-primary border-0" role="alert" aria-live="assertive"
+        aria-atomic="true" id="liveToast">
+        <div class="d-flex">
+            <div class="toast-body" id="toast-message">
+                Hello, world! This is a toast message.
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                aria-label="Close"></button>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+
+    <script>
+        // Initialize Supabase
+        const supabaseUrl = 'https://xfobhekfgtprbhkfxjcd.supabase.co';
+        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inhmb2JoZWtmZ3RwcmJoa2Z4amNkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTYwNzU5ODIsImV4cCI6MjA3MTY1MTk4Mn0.GeJpusueh1RYIJum6kBQeKg8KpUQJP2EpMHTI4WxLY0';
+        const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+
+        // DOM elements
+        const authButton = document.getElementById('auth-button');
+        const authIcon = document.getElementById('auth-icon');
+        const userNameTooltip = document.getElementById('user-name-tooltip');
+        const logoutButton = document.getElementById('logout-button');
+        const pgCardsContainer = document.getElementById('pg-cards-container');
+        const resultsCount = document.getElementById('results-count');
+        const loadMoreBtn = document.getElementById('load-more-btn');
+        const loadMoreContainer = document.getElementById('load-more-container');
+        const searchForm = document.getElementById('search-form');
+        const locationSearch = document.getElementById('location-search');
+        const budgetFilter = document.getElementById('budget-filter');
+        const cityFilter = document.getElementById('city-filter');
+        const sharingFilter = document.getElementById('sharing-filter');
+        const mealFilter = document.getElementById('meal-filter');
+        const verifiedFilter = document.getElementById('verified-filter');
+        const priceRange = document.getElementById('stickyPriceRange');
+        const priceValue = document.getElementById('stickyPriceValue');
+        const sortBy = document.getElementById('sort-by');
+        const resetFiltersBtn = document.getElementById('reset-filters');
+        const cityFilterBtns = document.querySelectorAll('.city-filter-btn');
+        const listViewBtn = document.getElementById('list-view-btn');
+        const mapViewBtn = document.getElementById('map-view-btn');
+        const mapContainer = document.getElementById('map-container');
+        const savedPgsLink = document.getElementById('saved-pgs-link');
+        const savedPgsDropdown = document.getElementById('saved-pgs-dropdown');
+        const savedCountBadge = document.getElementById('saved-count-badge');
+        const toast = new bootstrap.Toast(document.getElementById('liveToast'));
+
+         const bookingModal = new bootstrap.Modal(document.getElementById('bookingModal'));
+        const bookingForm = document.getElementById('booking-form');
+        const bookingSubmitBtn = document.getElementById('booking-submit');
+        const modalPgInfo = document.getElementById('modal-pg-info');
+        const bookingSpinner = bookingSubmitBtn.querySelector('.spinner-border');
+
+
+        // Global variables
+        let allPGs = [];
+        let filteredPGs = [];
+        let displayedCount = 0;
+        const itemsPerPage = 9;
+        let map = null;
+        let markers = [];
+        let pgCardElements = [];
+        let savedPGs = [];
+         let currentPgId = null;
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function () {
+            // Load saved PGs from localStorage
+            loadSavedPGs();
+            
+            // Load PG data
+            loadPGData();
+
+            // Set up event listeners
+            setupEventListeners();
+
+            // Initialize price range display
+            updatePriceValue();
+
+            // Typing effect
+            initializeTypingEffect();
+
+            // Check authentication state
+            checkAuthState();
+
+             // Set up booking modal event listeners
+            setupBookingModal();
+        });
+
+        // Load saved PGs from localStorage
+        function loadSavedPGs() {
+            const saved = localStorage.getItem('savedPGs');
+            savedPGs = saved ? JSON.parse(saved) : [];
+            updateSavedCount();
+        }
+
+        // Save PGs to localStorage
+        function savePGsToStorage() {
+            localStorage.setItem('savedPGs', JSON.stringify(savedPGs));
+            updateSavedCount();
+        }
+
+        // Update saved count badge
+        function updateSavedCount() {
+            savedCountBadge.textContent = savedPGs.length;
+        }
+
+        // Load PG data from JSON
+        async function loadPGData() {
+            try {
+                // Fetch the JSON file (must be inside your project folder, e.g. /pgs_100_diverse.json)
+                const response = await fetch("pgs_100_diverse.json");
+                const sampleData = await response.json();
+
+                allPGs = sampleData;
+                filteredPGs = [...allPGs];
+
+                // Apply initial filters and render
+                applyFilters();
+
+            } catch (error) {
+                console.error('Error loading PG data:', error);
+                showToast('Error loading PG data. Please try again later.', true);
+                pgCardsContainer.innerHTML = `
+            <div class="no-results">
+                <i class="bi bi-exclamation-triangle display-4 text-danger"></i>
+                <h3 class="mt-3">Unable to load PG listings</h3>
+                <p class="text-muted">Please try refreshing the page or check your connection.</p>
+                <button class="btn btn-primary mt-2" onclick="loadPGData()">Try Again</button>
+            </div>
+        `;
+            }
+        }
+
+
+        // Set up event listeners
+        function setupEventListeners() {
+            // Filter event listeners
+            cityFilter.addEventListener('change', applyFilters);
+            sharingFilter.addEventListener('change', applyFilters);
+            mealFilter.addEventListener('change', applyFilters);
+            verifiedFilter.addEventListener('change', applyFilters);
+            priceRange.addEventListener('input', function () {
+                updatePriceValue();
+                applyFilters();
+            });
+            sortBy.addEventListener('change', applyFilters);
+
+            // Search form
+            searchForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                applyFilters();
+            });
+
+            // Reset filters
+            resetFiltersBtn.addEventListener('click', resetFilters);
+
+            // City filter buttons
+            cityFilterBtns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const city = this.getAttribute('data-city');
+                    cityFilter.value = city;
+                    applyFilters();
+                });
+            });
+
+            // Load more button
+            loadMoreBtn.addEventListener('click', loadMorePGs);
+
+            // Authentication
+            logoutButton.addEventListener('click', handleLogout);
+
+            // Saved PGs link
+            savedPgsLink.addEventListener('click', showSavedPGs);
+            savedPgsDropdown.addEventListener('click', showSavedPGs);
+
+            // Window resize for auth button
+            window.addEventListener('resize', updateAuthButton);
+
+            // View toggle buttons
+            listViewBtn.addEventListener('click', function() {
+                listViewBtn.classList.add('active');
+                mapViewBtn.classList.remove('active');
+                mapContainer.style.display = 'none';
+                pgCardsContainer.style.display = 'flex';
+            });
+
+            mapViewBtn.addEventListener('click', function() {
+                mapViewBtn.classList.add('active');
+                listViewBtn.classList.remove('active');
+                pgCardsContainer.style.display = 'none';
+                mapContainer.style.display = 'block';
+                initMap();
+            });
+        }
+
+        // Apply filters to PG data
+        function applyFilters() {
+            const city = cityFilter.value;
+            const sharing = sharingFilter.value;
+            const meals = mealFilter.value;
+            const verified = verifiedFilter.value;
+            const maxPrice = parseInt(priceRange.value);
+            const searchText = locationSearch.value.toLowerCase();
+            const budgetText = budgetFilter.value.toLowerCase();
+
+            filteredPGs = allPGs.filter(pg => {
+                // City filter
+                if (city && pg.city !== city) return false;
+
+                // Sharing type filter
+                if (sharing && pg.sharing !== sharing) return false;
+
+                // Meals filter
+                if (meals && pg.meals !== meals) return false;
+
+                // Verified filter
+                if (verified && pg.verified.toString() !== verified) return false;
+
+                // Price filter
+                if (pg.price > maxPrice) return false;
+
+                // Search text filter
+                if (searchText &&
+                    !pg.title.toLowerCase().includes(searchText) &&
+                    !pg.area.toLowerCase().includes(searchText) &&
+                    !pg.city.toLowerCase().includes(searchText)) {
+                    return false;
+                }
+
+                // Budget text filter (simple implementation)
+                if (budgetText) {
+                    const budgetMatch = budgetText.match(/(\d+)\s*-\s*(\d+)/);
+                    if (budgetMatch) {
+                        const minBudget = parseInt(budgetMatch[1]);
+                        const maxBudget = parseInt(budgetMatch[2]);
+                        if (pg.price < minBudget || pg.price > maxBudget) return false;
+                    }
+                }
+
+                return true;
+            });
+
+            // Sort results
+            sortPGs();
+
+            // Reset displayed count
+            displayedCount = 0;
+
+            // Render results
+            renderPGs();
+
+            // Update map if it's visible
+            if (mapContainer.style.display === 'block') {
+                updateMap();
+            }
+        }
+
+        // Sort PGs based on selected option
+        function sortPGs() {
+            const sortOption = sortBy.value;
+
+            switch (sortOption) {
+                case 'price-asc':
+                    filteredPGs.sort((a, b) => a.price - b.price);
+                    break;
+                case 'price-desc':
+                    filteredPGs.sort((a, b) => b.price - a.price);
+                    break;
+                case 'rating-desc':
+                    filteredPGs.sort((a, b) => b.rating - a.rating);
+                    break;
+                case 'reviews-desc':
+                    filteredPGs.sort((a, b) => b.reviews - a.reviews);
+                    break;
+                default:
+                    // Default sorting (by ID)
+                    filteredPGs.sort((a, b) => a.id - b.id);
+            }
+        }
+
+        // Render PG cards
+        function renderPGs() {
+            // Calculate how many to show
+            const pgsToShow = filteredPGs.slice(0, displayedCount + itemsPerPage);
+
+            if (pgsToShow.length === 0) {
+                pgCardsContainer.innerHTML = `
+                    <div class="no-results">
+                        <i class="bi bi-search display-4 text-muted"></i>
+                        <h3 class="mt-3">No PGs found</h3>
+                        <p class="text-muted">Try adjusting your filters to find more options</p>
+                        <button class="btn btn-primary mt-2" onclick="resetFilters()">Reset Filters</button>
+                    </div>
+                `;
+                loadMoreContainer.style.display = 'none';
+                resultsCount.textContent = 'No results found';
+                return;
+            }
+
+            // Generate HTML for PG cards
+            let html = '';
+            pgsToShow.forEach(pg => {
+                html += createPGCard(pg);
+            });
+
+            pgCardsContainer.innerHTML = html;
+
+            // Store references to PG card elements
+            pgCardElements = document.querySelectorAll('.pg-card');
+
+            // Update displayed count
+            displayedCount = pgsToShow.length;
+
+            // Show/hide load more button
+            if (displayedCount < filteredPGs.length) {
+                loadMoreContainer.style.display = 'block';
+                loadMoreBtn.textContent = `Load More (${filteredPGs.length - displayedCount} remaining)`;
+            } else {
+                loadMoreContainer.style.display = 'none';
+            }
+
+            // Update results count
+            resultsCount.textContent = `Showing ${displayedCount} of ${filteredPGs.length} PGs`;
+
+            // Add event listeners to favorite buttons
+            addFavoriteEventListeners();
+
+            // Add event listeners for map interaction
+            addMapInteractionListeners();
+        }
+
+        // Create HTML for a single PG card
+        function createPGCard(pg) {
+            const amenities = pg.amenities.slice(0, 3);
+            const extraAmenities = pg.amenities.length - 3;
+            const isSaved = savedPGs.includes(pg.id);
+            const heartIcon = isSaved ? 'bi-heart-fill text-danger' : 'bi-heart';
+
+            return `
+                <div class="pg-card" data-pg-id="${pg.id}">
+                    <div class="pg-card-img">
+                        <img src="${pg.images[0]}" alt="${pg.title}">
+                        ${pg.verified ? '<span class="pg-card-label">Verified</span>' : ''}
+                        <span class="pg-card-distance">${pg.distance}</span>
+                        <span class="pg-card-rent">₹${pg.price.toLocaleString('en-IN')}/mo</span>
+                        <span class="pg-card-fav ${isSaved ? 'active' : ''}" data-pg-id="${pg.id}" style="border-radius: 8px; background: #fff; padding: 0px 7px; box-shadow: 0 1px 6px rgba(0,0,0,0.07); border: 1px solid #eee; display: inline-flex; align-items: center;">
+                            <i class="bi ${heartIcon}"></i>
+                        </span>
+                    </div>
+                    <div class="pg-card-body">
+                        <h5 class="pg-card-title">${pg.title}</h5>
+                        <p class="pg-card-location"><i class="bi bi-geo-alt"></i> ${pg.area}, ${pg.city}</p>
+                        <div class="pg-card-rating">
+                            <i class="bi bi-star-fill"></i> ${pg.rating} 
+                            <span style="color:#555;font-weight:400;">(${pg.reviews} reviews)</span>
+                        </div>
+                        <small>Sharing:</small><span class="pg-badge">${pg.sharing}</span>
+                        <small>Meals:</small><span class="pg-badge">${pg.meals}</span>
+                        <div class="pg-card-icon-row">
+                            ${amenities.map(amenity => `
+                                <span><i class="bi bi-${getAmenityIcon(amenity)}"></i> ${formatAmenity(amenity)}</span>
+                            `).join('')}
+                            ${extraAmenities > 0 ?
+                    `<span style="color:#1976d2; font-weight:500;">+${extraAmenities} more</span>` : ''}
+                        </div>
+                    </div>
+                    <div class="pg-card-footer">
+                        <button class="btn btn-outline-dark w-50 view-details" data-pg-id="${pg.id}">
+                            <i class="bi bi-eye"></i> Details
+                        </button>
+                        <button class="btn btn-primary w-50 book-now" data-pg-id="${pg.id}">
+                            <i class="bi bi-calendar-check"></i> Book
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Get icon for amenity
+        function getAmenityIcon(amenity) {
+            const iconMap = {
+                'wifi': 'wifi',
+                'meals_included': 'cup-straw',
+                'cctv': 'camera-video',
+                'power_backup': 'lightning-charge',
+                'parking': 'car-front-fill',
+                'study_room': 'journal-bookmark',
+                'ac': 'snow',
+                'gym': 'barbell',
+                'laundry': 'bucket',
+                'housekeeping': 'house',
+                'hot_water': 'droplet'
+            };
+
+            return iconMap[amenity] || 'check-circle';
+        }
+
+        // Format amenity name for display
+        function formatAmenity(amenity) {
+            return amenity.split('_').map(word =>
+                word.charAt(0).toUpperCase() + word.slice(1)
+            ).join(' ');
+        }
+
+        // Load more PGs
+        function loadMorePGs() {
+            renderPGs();
+        }
+
+        // Reset all filters
+        function resetFilters() {
+            cityFilter.value = '';
+            sharingFilter.value = '';
+            mealFilter.value = '';
+            verifiedFilter.value = '';
+            priceRange.value = 15500;
+            locationSearch.value = '';
+            budgetFilter.value = '';
+            sortBy.value = 'price-asc';
+
+            updatePriceValue();
+            applyFilters();
+
+            showToast('Filters reset');
+        }
+
+        // Update price range value display
+        function updatePriceValue() {
+            priceValue.textContent = `₹${parseInt(priceRange.value).toLocaleString('en-IN')}`;
+        }
+
+        // Add event listeners to favorite buttons
+        function addFavoriteEventListeners() {
+            document.querySelectorAll('.pg-card-fav').forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const pgId = parseInt(this.getAttribute('data-pg-id'));
+                    const icon = this.querySelector('i');
+
+                    if (this.classList.contains('active')) {
+                        // Remove from saved
+                        this.classList.remove('active');
+                        icon.className = 'bi bi-heart';
+                        removeFromSaved(pgId);
+                        showToast('Removed from favorites');
+                    } else {
+                        // Add to saved
+                        this.classList.add('active');
+                        icon.className = 'bi bi-heart-fill text-danger';
+                        addToSaved(pgId);
+                        showToast('Added to favorites');
+                    }
+                });
+            });
+
+            // Add event listeners to view details and book buttons
+            document.querySelectorAll('.view-details').forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const pgId = this.getAttribute('data-pg-id');
+                    showToast(`Viewing details for PG #${pgId}`);
+                    // In a real app, you would navigate to a details page
+                });
+            });
+
+            document.querySelectorAll('.book-now').forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const pgId = this.getAttribute('data-pg-id');
+                    showToast(`Booking PG #${pgId}`);
+                    // In a real app, you would show a booking modal
+                });
+            });
+        }
+
+        // Add to saved PGs
+        function addToSaved(pgId) {
+            if (!savedPGs.includes(pgId)) {
+                savedPGs.push(pgId);
+                savePGsToStorage();
+            }
+        }
+
+        // Remove from saved PGs
+        function removeFromSaved(pgId) {
+            const index = savedPGs.indexOf(pgId);
+            if (index > -1) {
+                savedPGs.splice(index, 1);
+                savePGsToStorage();
+            }
+        }
+
+        // Show saved PGs
+        function showSavedPGs(e) {
+            e.preventDefault();
+            
+            if (savedPGs.length === 0) {
+                showToast('You have no saved PGs', true);
+                return;
+            }
+            
+            // Filter to show only saved PGs
+            filteredPGs = allPGs.filter(pg => savedPGs.includes(pg.id));
+            
+            // Reset displayed count
+            displayedCount = 0;
+            
+            // Render results
+            renderPGs();
+            
+            // Update results count
+            resultsCount.textContent = `Showing ${Math.min(displayedCount, filteredPGs.length)} of ${filteredPGs.length} Saved PGs`;
+            
+            showToast('Showing your saved PGs');
+        }
+
+        // Add event listeners for map interaction
+        function addMapInteractionListeners() {
+            // Add click event to PG cards to highlight on map
+            document.querySelectorAll('.pg-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    const pgId = this.getAttribute('data-pg-id');
+                    highlightPGOnMap(pgId);
+                });
+            });
+        }
+
+        // Initialize map
+        function initMap() {
+            if (map) {
+                map.remove();
+                markers = [];
+            }
+
+            // Create map centered on India
+            map = L.map('map').setView([20.5937, 78.9629], 5);
+
+            // Add tile layer (OpenStreetMap)
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            // Add markers for filtered PGs
+            updateMap();
+        }
+
+        // Update map with current filtered PGs
+        function updateMap() {
+            if (!map) return;
+
+            // Clear existing markers
+            markers.forEach(marker => map.removeLayer(marker));
+            markers = [];
+
+            // Add markers for each PG
+            filteredPGs.forEach(pg => {
+                // Generate random coordinates within the city (for demo purposes)
+                // In a real app, you would use actual coordinates from your data
+                const lat = getRandomCoordinate(pg.city, 'lat');
+                const lng = getRandomCoordinate(pg.city, 'lng');
+                
+                // Create custom icon
+                const icon = L.divIcon({
+                    className: 'custom-marker',
+                    html: `<div style="background-color: #1976d2; width: 24px; height: 24px; border-radius: 50%; border: 3px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.3);"></div>`,
+                    iconSize: [24, 24],
+                    iconAnchor: [12, 12]
+                });
+
+                // Create marker
+                const marker = L.marker([lat, lng], { icon: icon })
+                    .addTo(map)
+                    .bindPopup(createMapPopup(pg));
+
+                // Store PG ID with marker
+                marker._pgId = pg.id;
+
+                // Add click event to highlight corresponding card
+                marker.on('click', function() {
+                    highlightPGCard(pg.id);
+                });
+
+                markers.push(marker);
+            });
+
+            // Fit map to show all markers
+            if (markers.length > 0) {
+                const group = new L.featureGroup(markers);
+                map.fitBounds(group.getBounds().pad(0.1));
+            }
+        }
+
+        // Generate random coordinates for a city (for demo purposes)
+        function getRandomCoordinate(city, type) {
+            // City center coordinates (approximate)
+            const cityCoords = {
+                'Bengaluru': { lat: 12.9716, lng: 77.5946 },
+                'Delhi': { lat: 28.6139, lng: 77.2090 },
+                'Kolkata': { lat: 22.5726, lng: 88.3639 },
+                'Mumbai': { lat: 19.0760, lng: 72.8777 },
+                'Pune': { lat: 18.5204, lng: 73.8567 },
+                'Hyderabad': { lat: 17.3850, lng: 78.4867 },
+                'Chennai': { lat: 13.0827, lng: 80.2707 }
+            };
+
+            // Default to Delhi if city not found
+            const center = cityCoords[city] || { lat: 28.6139, lng: 77.2090 };
+            
+            // Add some randomness to spread markers
+            const randomOffset = () => (Math.random() - 0.5) * 0.1;
+            
+            return type === 'lat' ? center.lat + randomOffset() : center.lng + randomOffset();
+        }
+
+        // Create popup content for map marker
+        function createMapPopup(pg) {
+            return `
+                <div class="map-popup">
+                    <img src="${pg.images[0]}" alt="${pg.title}">
+                    <h5>${pg.title}</h5>
+                    <p><i class="bi bi-geo-alt"></i> ${pg.area}, ${pg.city}</p>
+                    <p class="price">₹${pg.price.toLocaleString('en-IN')}/mo</p>
+                    <p><i class="bi bi-star-fill text-warning"></i> ${pg.rating} (${pg.reviews} reviews)</p>
+                    <button class="btn btn-primary btn-sm view-pg" data-pg-id="${pg.id}">View Details</button>
+                </div>
+            `;
+        }
+
+        // Highlight PG card when marker is clicked
+        function highlightPGCard(pgId) {
+            // Remove highlight from all cards
+            pgCardElements.forEach(card => {
+                card.classList.remove('highlighted');
+            });
+
+            // Find and highlight the specific card
+            const card = document.querySelector(`.pg-card[data-pg-id="${pgId}"]`);
+            if (card) {
+                card.classList.add('highlighted');
+                card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+
+        // Highlight marker when PG card is clicked
+        function highlightPGOnMap(pgId) {
+            // Find the marker for this PG
+            const marker = markers.find(m => m._pgId == pgId);
+            if (marker) {
+                // Open the popup
+                marker.openPopup();
+                
+                // Pan to the marker
+                map.panTo(marker.getLatLng());
+            }
+        }
+
+        // Show toast notification
+        function showToast(message, isError = false) {
+            const toastMessage = document.getElementById('toast-message');
+            const toastElement = document.getElementById('liveToast');
+
+            toastMessage.textContent = message;
+
+            if (isError) {
+                toastElement.classList.remove('bg-primary');
+                toastElement.classList.add('bg-danger');
+            } else {
+                toastElement.classList.remove('bg-danger');
+                toastElement.classList.add('bg-primary');
+            }
+
+            toast.show();
+        }
+
+        // Initialize typing effect
+        function initializeTypingEffect() {
+            var typed = new Typed('#element', {
+                strings: ['PG Home', 'Hostel', 'Accommodation', 'Living Space'],
+                loop: true,
+                typeSpeed: 70,
+            });
+        }
+
+        // Check authentication state
+        function checkAuthState() {
+            supabase.auth.getSession().then(({ data }) => {
+                updateUI(data.session);
+            });
+
+            supabase.auth.onAuthStateChange((event, session) => {
+                updateUI(session);
+            });
+        }
+
+        // Update UI based on authentication status
+        function updateUI(session) {
+            if (session) {
+                // User is signed in
+                authIcon.className = 'bi bi-person-fill';
+                const userName = session.user.user_metadata?.full_name || session.user.email || 'User';
+                userNameTooltip.textContent = userName;
+
+                // Update button text
+                updateAuthButton();
+            } else {
+                // User is signed out
+                authIcon.className = 'bi bi-person';
+                userNameTooltip.textContent = '';
+
+                // Update button text
+                updateAuthButton();
+
+                // Update href for sign in
+                authButton.href = '/auth.html';
+            }
+        }
+
+        // Update auth button based on screen size
+        function updateAuthButton() {
+            if (window.innerWidth > 768) {
+                if (userNameTooltip.textContent) {
+                    authButton.innerHTML = '<i class="bi bi-person-fill"></i> ' + userNameTooltip.textContent;
+                } else {
+                    authButton.innerHTML = '<i class="bi bi-person"></i> Sign In';
+                }
+            } else {
+                if (userNameTooltip.textContent) {
+                    authButton.innerHTML = '<i class="bi bi-person-fill"></i>';
+                } else {
+                    authButton.innerHTML = '<i class="bi bi-person"></i>';
+                }
+            }
+        }
+
+
+
+
+// Set up booking modal
+        function setupBookingModal() {
+            // Add event listeners to all book now buttons
+            document.addEventListener('click', function(e) {
+                if (e.target.classList.contains('book-now') || e.target.closest('.book-now')) {
+                    const button = e.target.classList.contains('book-now') ? e.target : e.target.closest('.book-now');
+                    const pgId = button.getAttribute('data-pg-id');
+                    openBookingModal(pgId);
+                }
+            });
+            
+            // Handle form submission
+            bookingForm.addEventListener('submit', handleBookingSubmit);
+        }
+
+        // Open booking modal with PG details
+        function openBookingModal(pgId) {
+            currentPgId = pgId;
+            const pg = allPGs.find(p => p.id == pgId);
+            
+            if (!pg) {
+                showToast('Error loading PG details', true);
+                return;
+            }
+            
+            // Populate PG info in modal
+            modalPgInfo.innerHTML = `
+                <div class="pg-info-title">${pg.title}</div>
+                <div class="pg-info-details">
+                    <div>${pg.area}, ${pg.city}</div>
+                    <div>₹${pg.price.toLocaleString('en-IN')}/month • ${pg.sharing} Sharing</div>
+                </div>
+            `;
+            
+            // Pre-fill form if user is logged in
+            supabase.auth.getUser().then(({ data }) => {
+                if (data.user) {
+                    document.getElementById('booking-name').value = data.user.user_metadata?.full_name || '';
+                    document.getElementById('booking-email').value = data.user.email || '';
+                }
+            });
+            
+            // Show modal
+            bookingModal.show();
+        }
+
+        // Handle booking form submission
+        async function handleBookingSubmit(e) {
+            e.preventDefault();
+            
+            // Validate form
+            if (!bookingForm.checkValidity()) {
+                e.stopPropagation();
+                bookingForm.classList.add('was-validated');
+                return;
+            }
+            
+            // Get form data
+            const name = document.getElementById('booking-name').value;
+            const email = document.getElementById('booking-email').value;
+            const phone = document.getElementById('booking-phone').value;
+            const message = document.getElementById('booking-message').value;
+            
+            // Show loading state
+            bookingSpinner.style.display = 'inline-block';
+            bookingSubmitBtn.disabled = true;
+            
+            try {
+                // Insert booking into Supabase
+                const { data, error } = await supabase
+                    .from('bookings')
+                    .insert([
+                        {
+                            pg_id: currentPgId,
+                            full_name: name,
+                            email: email,
+                            phone: phone,
+                            message: message,
+                            status: 'pending',
+                            created_at: new Date().toISOString()
+                        }
+                    ]);
+                
+                if (error) {
+                    throw error;
+                }
+                
+                // Success
+                bookingModal.hide();
+                showToast('Booking enquiry submitted successfully! We will contact you shortly.');
+                
+                // Reset form
+                bookingForm.reset();
+                bookingForm.classList.remove('was-validated');
+                
+            } catch (error) {
+                console.error('Error submitting booking:', error);
+                showToast('Error submitting booking. Please try again.', true);
+            } finally {
+                // Hide loading state
+                bookingSpinner.style.display = 'none';
+                bookingSubmitBtn.disabled = false;
+            }
+        }
+
+        // (All remaining functions remain unchanged)
+
+
+
+
+        // Handle logout
+        function handleLogout(e) {
+            e.preventDefault();
+
+            supabase.auth.signOut().then(({ error }) => {
+                if (error) {
+                    console.error('Error signing out:', error.message);
+                    showToast('Error signing out', true);
+                } else {
+                    showToast('Logged out successfully');
+                    window.location.href = 'index.html';
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

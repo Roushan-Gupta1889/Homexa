@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PadhoGhar - Authentication</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .auth-container {
+            width: 100%;
+            max-width: 900px;
+            height: 550px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .sliding-panel {
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(45deg, #1976d2, #2196f3);
+            transition: all 0.7s ease-in-out;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 40px;
+            box-sizing: border-box;
+            border-radius: 0 20px 20px 0;
+        }
+        
+        .sliding-panel.register-active {
+            transform: translateX(100%);
+            border-radius: 20px 0 0 20px;
+        }
+        
+        .form-panel {
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            padding: 40px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            transition: all 0.7s ease-in-out;
+        }
+        
+        .login-panel {
+            right: 0;
+            opacity: 1;
+        }
+        
+        .register-panel {
+            left: 0;
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+        
+        .register-active .login-panel {
+            opacity: 0;
+            transform: translateX(20px);
+        }
+        
+        .register-active .register-panel {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .toggle-button {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid white;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .toggle-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 14px 20px;
+            background: #f5f7fa;
+            border: none;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            background: white;
+            box-shadow: 0 0 0 2px #1976d2;
+        }
+        
+        .submit-button {
+            background: linear-gradient(45deg, #1976d2, #2196f3);
+            color: white;
+            border: none;
+            padding: 14px 20px;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(33, 150, 243, 0.4);
+        }
+        
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-button {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #f5f7fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .social-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 25px 0;
+        }
+        
+        .divider-line {
+            flex: 1;
+            height: 1px;
+            background: #e0e0e0;
+        }
+        
+        .divider-text {
+            padding: 0 15px;
+            color: #9e9e9e;
+            font-size: 14px;
+        }
+        
+        .toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 25px;
+            background: white;
+            border-left: 4px solid #4caf50;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
+        
+        .toast.show {
+            transform: translateX(0);
+        }
+        
+        .toast.error {
+            border-left-color: #f44336;
+        }
+        
+        .toast i {
+            margin-right: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .auth-container {
+                height: auto;
+                max-width: 400px;
+            }
+            
+            .sliding-panel {
+                display: none;
+            }
+            
+            .form-panel {
+                width: 100%;
+                position: relative;
+                padding: 30px;
+            }
+            
+            .register-panel {
+                transform: translateX(0);
+                opacity: 1;
+                display: none;
+            }
+            
+            .register-active .login-panel {
+                display: none;
+            }
+            
+            .register-active .register-panel {
+                display: flex;
+                transform: translateX(0);
+            }
+            
+            .mobile-toggle {
+                display: block;
+                text-align: center;
+                margin-top: 20px;
+                color: #1976d2;
+                font-weight: 600;
+                cursor: pointer;
+            }
+        }
+        
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-weight: 700;
+            font-size: 22px;
+            color: #1976d2;
+        }
+        
+        .logo i {
+            margin-right: 8px;
+        }
+        
+        .radial-bg {
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(25, 118, 210, 0.1);
+            border-radius: 50%;
+        }
+        
+        .radial-bg-2 {
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            width: 300px;
+            height: 300px;
+            background: rgba(33, 150, 243, 0.1);
+            border-radius: 50%;
+        }
+        
+        .password-container {
+            position: relative;
+        }
+        
+        .toggle-password {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #9e9e9e;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="auth-container" id="auth-container">
+        <div class="logo">
+            <i class="fas fa-home"></i> PadhoGhar
+        </div>
+        
+        <div class="sliding-panel" id="sliding-panel">
+            <div>
+                <h2 id="slider-title" class="text-3xl font-bold mb-4">Welcome to PadhoGhar!</h2>
+                <p id="slider-text" class="text-lg opacity-90 mb-6">Find your perfect PG accommodation</p>
+                <button class="toggle-button" id="toggle-button">
+                    Register
+                </button>
+            </div>
+        </div>
+
+        <div class="form-panel login-panel" id="login-panel">
+            <div class="w-full">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Login</h2>
+                <form id="login-form">
+                    <input type="email" id="login-email" class="form-input" placeholder="Email" required>
+                    <div class="password-container">
+                        <input type="password" id="login-password" class="form-input" placeholder="Password" required>
+                        <span class="toggle-password" id="toggle-login-password">
+                            <i class="far fa-eye"></i>
+                        </span>
+                    </div>
+                    <button type="submit" class="submit-button" id="login-submit-button">Login</button>
+                </form>
+                
+                <div class="divider">
+                    <div class="divider-line"></div>
+                    <div class="divider-text">or continue with</div>
+                    <div class="divider-line"></div>
+                </div>
+                
+                <div class="social-buttons">
+                    <div class="social-button" id="btn-social-google-login">
+                        <i class="fab fa-google text-gray-600"></i>
+                    </div>
+                    <div class="social-button" id="btn-social-github-login">
+                        <i class="fab fa-github text-gray-600"></i>
+                    </div>
+                </div>
+                
+                <div class="mobile-toggle" id="mobile-toggle-login">
+                    Don't have an account? <span style="color: #1976d2; font-weight: 600;">Register</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-panel register-panel" id="register-panel">
+            <div class="w-full">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Create Account</h2>
+                <form id="register-form">
+                    <input type="text" id="reg-username" class="form-input" placeholder="Full Name" required>
+                    <input type="email" id="reg-email" class="form-input" placeholder="Email" required>
+                    <div class="password-container">
+                        <input type="password" id="reg-password" class="form-input" placeholder="Password" required>
+                        <span class="toggle-password" id="toggle-register-password">
+                            <i class="far fa-eye"></i>
+                        </span>
+                    </div>
+                    <button type="submit" class="submit-button" id="register-submit-button">Register</button>
+                </form>
+                
+                <div class="divider">
+                    <div class="divider-line"></div>
+                    <div class="divider-text">or continue with</div>
+                    <div class="divider-line"></div>
+                </div>
+                
+                <div class="social-buttons">
+                    <div class="social-button" id="btn-social-google-register">
+                        <i class="fab fa-google text-gray-600"></i>
+                    </div>
+                    <div class="social-button" id="btn-social-github-register">
+                        <i class="fab fa-github text-gray-600"></i>
+                    </div>
+                </div>
+                
+                <div class="mobile-toggle" id="mobile-toggle-register">
+                    Already have an account? <span style="color: #1976d2; font-weight: 600;">Login</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="radial-bg"></div>
+        <div class="radial-bg-2"></div>
+    </div>
+
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toast-message">Operation successful</span>
+    </div>
+
+    <script>
+        // Initialize Supabase (replace with your actual credentials)
+        const supabaseUrl = 'https://xfobhekfgtprbhkfxjcd.supabase.co';
+        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inhmb2JoZWtmZ3RwcmJoa2Z4amNkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTYwNzU5ODIsImV4cCI6MjA3MTY1MTk4Mn0.GeJpusueh1RYIJum6kBQeKg8KpUQJP2EpMHTI4WxLY0';
+        const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+        
+        // UI Elements
+        const authContainer = document.getElementById('auth-container');
+        const slidingPanel = document.getElementById('sliding-panel');
+        const loginPanel = document.getElementById('login-panel');
+        const registerPanel = document.getElementById('register-panel');
+        const toggleButton = document.getElementById('toggle-button');
+        const sliderTitle = document.getElementById('slider-title');
+        const sliderText = document.getElementById('slider-text');
+        const loginForm = document.getElementById('login-form');
+        const registerForm = document.getElementById('register-form');
+        const toast = document.getElementById('toast');
+        const toastMessage = document.getElementById('toast-message');
+        const toastIcon = toast.querySelector('i');
+        const mobileToggleLogin = document.getElementById('mobile-toggle-login');
+        const mobileToggleRegister = document.getElementById('mobile-toggle-register');
+        const toggleLoginPassword = document.getElementById('toggle-login-password');
+        const toggleRegisterPassword = document.getElementById('toggle-register-password');
+        
+        let isLoginState = true;
+        
+        // Toggle between login and register
+        function toggleAuthState() {
+            isLoginState = !isLoginState;
+            
+            if (isLoginState) {
+                // Switch to login
+                authContainer.classList.remove('register-active');
+                slidingPanel.classList.remove('register-active');
+                toggleButton.textContent = 'Register';
+                sliderTitle.textContent = 'Welcome to PadhoGhar!';
+                sliderText.textContent = 'Find your perfect PG accommodation';
+            } else {
+                // Switch to register
+                authContainer.classList.add('register-active');
+                slidingPanel.classList.add('register-active');
+                toggleButton.textContent = 'Login';
+                sliderTitle.textContent = 'Hello, Friend!';
+                sliderText.textContent = 'Enter your details and start your journey with us';
+            }
+        }
+        
+        toggleButton.addEventListener('click', toggleAuthState);
+        mobileToggleLogin.addEventListener('click', toggleAuthState);
+        mobileToggleRegister.addEventListener('click', toggleAuthState);
+        
+        // Toggle password visibility
+        function setupPasswordToggle(toggleElement, passwordFieldId) {
+            toggleElement.addEventListener('click', function() {
+                const passwordField = document.getElementById(passwordFieldId);
+                const icon = this.querySelector('i');
+                
+                if (passwordField.type === 'password') {
+                    passwordField.type = 'text';
+                    icon.classList.remove('fa-eye');
+                    icon.classList.add('fa-eye-slash');
+                } else {
+                    passwordField.type = 'password';
+                    icon.classList.remove('fa-eye-slash');
+                    icon.classList.add('fa-eye');
+                }
+            });
+        }
+        
+        setupPasswordToggle(toggleLoginPassword, 'login-password');
+        setupPasswordToggle(toggleRegisterPassword, 'reg-password');
+        
+        // Show toast notification
+        function showToast(message, isError = false) {
+            toastMessage.textContent = message;
+            
+            if (isError) {
+                toast.className = 'toast error';
+                toastIcon.className = 'fas fa-exclamation-circle';
+            } else {
+                toast.className = 'toast';
+                toastIcon.className = 'fas fa-check-circle';
+            }
+            
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+        
+        // Handle login form submission
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+            const submitButton = document.getElementById('login-submit-button');
+            
+            if (!email || !password) {
+                showToast('Please fill in all fields', true);
+                return;
+            }
+            
+            submitButton.disabled = true;
+            submitButton.textContent = 'Logging in...';
+            
+            try {
+                // Actual Supabase login call
+                const { data, error } = await supabase.auth.signInWithPassword({
+                    email,
+                    password
+                });
+                
+                if (error) {
+                    showToast(error.message, true);
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Login';
+                    return;
+                }
+                
+                showToast('Login successful! Redirecting...', false);
+                
+                // Redirect to home page after successful login
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 1500);
+                
+            } catch (error) {
+                showToast('An error occurred during login', true);
+                submitButton.disabled = false;
+                submitButton.textContent = 'Login';
+            }
+        });
+        
+        // Handle register form submission
+        registerForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const email = document.getElementById('reg-email').value;
+            const password = document.getElementById('reg-password').value;
+            const fullName = document.getElementById('reg-username').value;
+            const submitButton = document.getElementById('register-submit-button');
+            
+            if (!email || !password || !fullName) {
+                showToast('Please fill in all fields', true);
+                return;
+            }
+            
+            if (password.length < 6) {
+                showToast('Password must be at least 6 characters', true);
+                return;
+            }
+            
+            submitButton.disabled = true;
+            submitButton.textContent = 'Creating account...';
+            
+            try {
+                // Actual Supabase registration call
+                const { data, error } = await supabase.auth.signUp({
+                    email,
+                    password,
+                    options: {
+                        data: {
+                            full_name: fullName
+                        }
+                    }
+                });
+                
+                if (error) {
+                    showToast(error.message, true);
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Register';
+                    return;
+                }
+                
+                showToast('Account created successfully! Please check your email for verification.', false);
+                
+                // Clear form
+                registerForm.reset();
+                
+                // Switch to login after successful registration
+                setTimeout(() => {
+                    isLoginState = true;
+                    authContainer.classList.remove('register-active');
+                    slidingPanel.classList.remove('register-active');
+                    toggleButton.textContent = 'Register';
+                    sliderTitle.textContent = 'Welcome to PadhoGhar!';
+                    sliderText.textContent = 'Find your perfect PG accommodation';
+                    
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Register';
+                }, 2000);
+                
+            } catch (error) {
+                showToast('An error occurred during registration', true);
+                submitButton.disabled = false;
+                submitButton.textContent = 'Register';
+            }
+        });
+        
+        // Google authentication
+        document.getElementById('btn-social-google-login').addEventListener('click', async () => {
+            const { error } = await supabase.auth.signInWithOAuth({
+                provider: 'google',
+            });
+            
+            if (error) {
+                showToast('Error with Google authentication: ' + error.message, true);
+            }
+        });
+        
+        document.getElementById('btn-social-google-register').addEventListener('click', async () => {
+            const { error } = await supabase.auth.signInWithOAuth({
+                provider: 'google',
+            });
+            
+            if (error) {
+                showToast('Error with Google authentication: ' + error.message, true);
+            }
+        });
+        
+        // GitHub authentication
+        document.getElementById('btn-social-github-login').addEventListener('click', async () => {
+            const { error } = await supabase.auth.signInWithOAuth({
+                provider: 'github',
+            });
+            
+            if (error) {
+                showToast('Error with GitHub authentication: ' + error.message, true);
+            }
+        });
+        
+        document.getElementById('btn-social-github-register').addEventListener('click', async () => {
+            const { error } = await supabase.auth.signInWithOAuth({
+                provider: 'github',
+            });
+            
+            if (error) {
+                showToast('Error with GitHub authentication: ' + error.message, true);
+            }
+        });
+        
+        // Check if user is already logged in
+        supabase.auth.getSession().then(({ data }) => {
+            if (data.session) {
+                window.location.href = 'index.html';
+            }
+        });
+    </script>
+</body>
+
+</html>
