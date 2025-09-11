@@ -791,7 +791,163 @@
         }
 
 
-        
+        .search-bar {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 12px 20px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    margin: 30px auto;
+    max-width: 800px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease-in-out;
+}
+
+.search-bar:hover {
+    box-shadow: 0 8px 25px rgba(25, 118, 210, 0.2);
+    transform: translateY(-2px);
+}
+
+.search-bar .input-group {
+    flex: 1;
+    min-width: 220px;
+    border-radius: 15px;
+    overflow: hidden;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+}
+
+.search-bar .form-control {
+    border: none;
+    background: transparent;
+    padding: 12px 16px;
+    font-size: 1rem;
+}
+
+.search-bar .form-control:focus {
+    outline: none;
+    box-shadow: none;
+    background: #fff;
+}
+
+.search-bar .btn-primary {
+    border-radius: 15px;
+    padding: 12px 28px;
+    font-weight: 600;
+    background: linear-gradient(90deg, #1976d2, #42a5f5);
+    border: none;
+    transition: all 0.3s;
+}
+
+.search-bar .btn-primary:hover {
+    background: linear-gradient(90deg, #1565c0, #1e88e5);
+    transform: scale(1.05);
+}
+
+
+/* Navbar Styling */
+.navbar {
+    background: rgba(255, 255, 255, 0.85) !important; 
+    backdrop-filter: blur(12px); 
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar:hover {
+    background: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* Brand Logo */
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #1976d2 !important;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.navbar-brand img {
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover img {
+    transform: rotate(-5deg) scale(1.05);
+}
+
+/* Navbar Links */
+.navbar-nav .nav-link {
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 10px 18px;
+    border-radius: 6px;
+    color: #1e293b !important;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    background: #e3f2fd;
+    color: #1976d2 !important;
+    transform: translateY(-3px);
+}
+
+/* Active link */
+.navbar-nav .nav-link.active {
+    background: #1976d2;
+    color: #fff !important;
+    font-weight: 600;
+}
+
+/* Buttons on Right Side (Saved, Profile, etc.) */
+.navbar .btn-outline-primary {
+    border-radius: 25px;
+    padding: 6px 16px;
+    font-weight: 500;
+    border: 1.5px solid #1976d2;
+    color: #1976d2;
+    transition: all 0.3s;
+}
+
+.navbar .btn-outline-primary:hover {
+    background: #1976d2;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(25, 118, 210, 0.25);
+}
+.navbar-nav.ms-auto {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* adds spacing between all nav items */
+}
+/* Sticky Navbar */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1050; /* keeps navbar above everything */
+    background: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Shrink effect on scroll */
+.navbar.scrolled {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    background: rgba(255, 255, 255, 0.98) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+.filters-sticky-bar {
+    position: sticky;
+    top: 70px; /* adjust to your navbar height */
+    z-index: 1040; /* slightly below navbar */
+    background: #fff;
+    border-bottom: 1px solid #e5e7eb;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
     </style>
 </head>
 
@@ -800,7 +956,7 @@
     <nav class="navbar navbar-expand-lg navbar-light sticky-top">
 
         <div class="container">
-            <a class="navbar-brand" href="#"><i class="bi bi-geo-alt-fill text-primary"></i> PadhoGhar</a>
+            <a class="navbar-brand" href="#"><img src="/asserts/IMG-20250911-WA0016 (1).jpeg" alt="logo" height="50px"width50px style="border-radius: 10px;"> PadhoGhar</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -808,7 +964,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link" href="#find-pg">Find PGs</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#how-it-works">How it Works</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
@@ -1011,9 +1167,9 @@
     </div>
 
     <!-- Why Choose PadhoGhar Section -->
-    <div class="why-choose-section" id="how-it-works">
+    <div class="why-choose-section" id="about">
         <div class="container">
-            <h2>Why Choose PadhoGhar?</h2>
+            <h2>About PadhoGhar</h2>
             <p class="subheading">India's most trusted platform for student accommodations</p>
 
             <div class="stats-container">
@@ -1100,7 +1256,7 @@
             <div class="row">
                 <!-- Company Info -->
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <h5 class="fw-bold mb-3"><i class="bi bi-geo-alt-fill text-primary"></i> PadhoGhar</h5>
+                    <h5 class="fw-bold mb-3"><img src="/asserts/IMG-20250911-WA0016 (1).jpeg" alt="logo" height="40px" width="40px" style="border-radius: 10px;margin-right: 8px;">PadhoGhar</h5>
                     <p class="mb-3">India's most trusted platform for student accommodations. Find verified, affordable
                         PG accommodations without any brokerage fees.</p>
                     <div class="d-flex gap-3">
@@ -1331,10 +1487,17 @@
             sortBy.addEventListener('change', applyFilters);
 
             // Search form
-            searchForm.addEventListener('submit', function (e) {
-                e.preventDefault();
-                applyFilters();
-            });
+searchForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    applyFilters();
+
+    // Smooth scroll to Available PG section
+    document.getElementById('find-pg').scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+    });
+});
+
 
             // Reset filters
             resetFiltersBtn.addEventListener('click', resetFilters);
@@ -2152,7 +2315,25 @@ function resetFilters() {
     applyFilters();
 
     showToast('Filters reset');
+
+
 }
+document.getElementById('saved-pgs-link').addEventListener('click', function(e) {
+    e.preventDefault();
+    document.getElementById('find-pg').scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+    });
+});
+window.addEventListener("scroll", function () {
+    const navbar = document.querySelector(".navbar");
+    if (window.scrollY > 50) {
+        navbar.classList.add("scrolled");
+    } else {
+        navbar.classList.remove("scrolled");
+    }
+});
+
     </script>
 </body>
 
