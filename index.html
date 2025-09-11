@@ -2041,6 +2041,118 @@
                 }
             });
         }
+        // Add this function to handle search functionality
+function handleSearch() {
+    const searchText = locationSearch.value.toLowerCase().trim();
+    const budgetText = budgetFilter.value.toLowerCase().trim();
+    
+    // If both fields are empty, reset filters
+    if (!searchText && !budgetText) {
+        resetFilters();
+        return;
+    }
+    
+    // Apply search filters
+    filteredPGs = allPGs.filter(pg => {
+        let matchesSearch = true;
+        let matchesBudget = true;
+        
+        // Search text filter
+        if (searchText) {
+            matchesSearch = (
+                pg.title.toLowerCase().includes(searchText) ||
+                pg.area.toLowerCase().includes(searchText) ||
+                pg.city.toLowerCase().includes(searchText)
+            );
+        }
+        
+        // Budget text filter
+        if (budgetText) {
+            // Handle different budget input formats
+            if (budgetText.includes('-')) {
+                // Range format (e.g., "5000-10000")
+                const [minStr, maxStr] = budgetText.split('-').map(s => s.trim().replace('₹', '').replace(',', ''));
+                const minBudget = parseInt(minStr) || 0;
+                const maxBudget = parseInt(maxStr) || Infinity;
+                
+                matchesBudget = (pg.price >= minBudget && pg.price <= maxBudget);
+            } else if (budgetText.includes('to')) {
+                // "to" format (e.g., "5000 to 10000")
+                const [minStr, maxStr] = budgetText.split('to').map(s => s.trim().replace('₹', '').replace(',', ''));
+                const minBudget = parseInt(minStr) || 0;
+                const maxBudget = parseInt(maxStr) || Infinity;
+                
+                matchesBudget = (pg.price >= minBudget && pg.price <= maxBudget);
+            } else if (budgetText.includes('+')) {
+                // Minimum format (e.g., "10000+")
+                const minBudget = parseInt(budgetText.replace('+', '').replace('₹', '').replace(',', '')) || 0;
+                matchesBudget = (pg.price >= minBudget);
+            } else {
+                // Exact amount or just numbers
+                const budgetAmount = parseInt(budgetText.replace('₹', '').replace(',', '')) || 0;
+                if (budgetAmount > 0) {
+                    // Allow some flexibility (±10%)
+                    const lowerBound = budgetAmount * 0.9;
+                    const upperBound = budgetAmount * 1.1;
+                    matchesBudget = (pg.price >= lowerBound && pg.price <= upperBound);
+                }
+            }
+        }
+        
+        return matchesSearch && matchesBudget;
+    });
+    
+    // Sort and render results
+    sortPGs();
+    displayedCount = 0;
+    renderPGs();
+    
+    // Show message about search results
+    if (filteredPGs.length === 0) {
+        showToast('No PGs found matching your search criteria');
+    } else {
+        showToast(`Found ${filteredPGs.length} PGs matching your search`);
+    }
+}
+
+// Update the search form event listener
+searchForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    handleSearch();
+});
+
+// Add input event listeners for real-time search (optional)
+let searchTimeout;
+locationSearch.addEventListener('input', function() {
+    clearTimeout(searchTimeout);
+    searchTimeout = setTimeout(handleSearch, 500); // Debounce search
+});
+
+budgetFilter.addEventListener('input', function() {
+    clearTimeout(searchTimeout);
+    searchTimeout = setTimeout(handleSearch, 500); // Debounce search
+});
+
+// Add placeholder text with examples
+locationSearch.placeholder = "e.g., Bengaluru, Koramangala, IIT Delhi";
+budgetFilter.placeholder = "e.g., 5000-10000, 8000+, ₹7,500";
+
+// Update the resetFilters function to clear search fields too
+function resetFilters() {
+    cityFilter.value = '';
+    sharingFilter.value = '';
+    mealFilter.value = '';
+    verifiedFilter.value = '';
+    priceRange.value = 15500;
+    locationSearch.value = '';
+    budgetFilter.value = '';
+    sortBy.value = 'price-asc';
+
+    updatePriceValue();
+    applyFilters();
+
+    showToast('Filters reset');
+}
     </script>
 </body>
 
